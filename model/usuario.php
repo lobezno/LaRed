@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+	session_start();
 	require_once('accessDB.php');
 	//	Modelo del elemento Usuario
 	class Usuario {
@@ -24,15 +24,16 @@
 
 	    // Otros métodos
 
-	
-
 	    public static function check($us,$pw){
 	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
-	   		$sql = "SELECT * FROM usuarios WHERE usuario = '" . $us ."' AND password = md5('" . $pw . "')";
+	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	   		$sql = "SELECT * FROM usuarios WHERE usuario = '" . $us .  "' AND password = md5('" . $pw  ."')";
 	  		$consulta = $pdo->query($sql);
-			 $rows = $consulta->rowCount();
+			$rows = $consulta->rowCount();
+			$registro = $consulta->fetch();
 			 if ($rows == 1) {
 			 	$_SESSION['usuario-validado'] = $us;
+			 	$_SESSION['idusuario'] = $registro['idusuario'];
 			 	header('Location: ../view/index.php');
 				return true;
 			 }else{
