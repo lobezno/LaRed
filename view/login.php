@@ -1,11 +1,4 @@
-<?php session_start();
-	include('../controller/controladorUsuarios.php');
-		if (isset($_POST['enviar'])) {
-				//Usuario::check($_POST['user'],$_POST['pass']);
-			entrar($_POST['user'],$_POST['pass']);
-		}
 
-?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -13,7 +6,7 @@
 	<title>LaRed - Login</title>
 </head>
 <body>
-	<form method="post">
+	<form method="post" action="../controller/controladorUsuarios.php?action=login">
 		<fieldset>
 			<label>Usuario</label>
 			<input type="text" name="user" id="user" placeholder='Usuario'>

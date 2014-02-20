@@ -1,8 +1,9 @@
 <?php
+	//session_start();
 	require_once('accessDB.php');
 	//	Modelo del elemento Usuario
 	class Usuario {
-/*	    protected $user;
+	    protected $user;
 	    protected $pass;
 	    protected $nombre;
 	    protected $mail;
@@ -22,40 +23,38 @@
 	    public function getMail(){ return $this->mail; }
 
 	    // Otros métodos
-*/
+
 	
 
 	    public static function check($us,$pw){
-	    	print("Dentro del check ");
-	    	print($us . $pw);
-	  //   	print("Principio");
-	  //   	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
-	  //  		$sql = "SELECT * FROM usuarios WHERE usuario = '" . $us ."' AND password = '" . $pw . "'";
-	  // 		$consulta = $pdo->query($sql);
-	  // 		print($sql);
-			//  $rows = $consulta->rowCount();
-			//  if ($rows == 1) {
-			//  	$_SESSION['usuario-validado'] = $user;
-			//  	header('Location: index.php');
-			// 	print("in");
-			// 	return true;
-			//  }else{
-			//  	print("out");
-			//  }
-
-			// print("Final");
-	    	
-	    }
-
-/*
-    public function connectDB(){
-	    	$pdo =  new PDO ($host, $userDB, $passDB) or die("Error de conexion.");
+	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
+	   		$sql = "SELECT * FROM usuarios WHERE usuario = '" . $us ."' AND password = md5('" . $pw . "')";
+	  		$consulta = $pdo->query($sql);
+			 $rows = $consulta->rowCount();
+			 if ($rows == 1) {
+			 	$_SESSION['usuario-validado'] = $us;
+			 	header('Location: ../view/index.php');
+				return true;
+			 }else{
+			 	header('Location: ../view/index.php');
+			 	return false;
+			 }
 	    }
 
 
 	    public function insertarUsuario($datos){
-	    	$sql = "INSERT INTO usuarios(usuario, password, nombre, email) VALUES ('" . $datos['user'] . "','" . $datos['user'] . "','" . $datos['user'] . "','" . $datos['user'] . "')";
-	    }*/
+
+	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
+	    	$sql = "INSERT INTO usuarios(usuario, password, nombre, email) VALUES ('" . $datos['user'] . "',md5('" . $datos['pass'] . "'),'" . $datos['nombre'] . "','" . $datos['mail'] . "')";
+	    	
+	    	$consulta = $pdo->exec($sql);
+	    	
+	    	if ($consulta) {
+	    		print("Insertado.");
+	    	}else{
+	    		print("Error Insertando!!!!!!!!!");
+	    	}
+	    }
 	}
 
 	?>
