@@ -31,16 +31,27 @@
 		</div>	
 	</section>
 	<section>
-		aqui van los posts
+		<?php 
+			require_once('../controller/controladorPosts.php');
+			$registros = ControladorPosts::volcar($_SESSION['idusuario']);
+			foreach ($registros as $registro){
+				print("<div id='" . $registro['idpost'] . "'>");
+				print("<p>" . $registro['post'] . "</p>");
+				print("<footer>el " . $registro['fecha'] . "</footer>");
+				print("</div>");
+			}
+			unset($registro);
+
+		 ?>
 	</section>
 	
 
 
 			<?php
 		}
-		else if(isset($user)){
+		else if(@$_SESSION['fail']){
 			//	codigo de fail autentificando
-			print("fail autentificando de " . $user);
+			
 			?>
 
 			<h1>Fail</h1>

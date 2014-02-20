@@ -2,6 +2,7 @@
 	require_once('../model/post.php');
 	require_once('../model/accessDB.php');
 
+class ControladorPosts{
 
 
 	function enviar(){
@@ -10,12 +11,16 @@
 		Post::insertarPost($datos);
 	}
 
-
-	switch($_GET['action']){
-		case 'send': 
-			enviar();
-			break;
-
+	function volcar($id){
+		return Post::mostrarPosts($id);
 	}
+	
+}
 
+		switch(@$_GET['action']){
+			case 'send': 
+				ControladorPosts::enviar();
+				break;
+
+		}
 ?>

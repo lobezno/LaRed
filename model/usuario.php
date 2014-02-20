@@ -37,6 +37,7 @@
 			 	header('Location: ../view/index.php');
 				return true;
 			 }else{
+			 	$_SESSION['fail'] = true;
 			 	header('Location: ../view/index.php');
 			 	return false;
 			 }

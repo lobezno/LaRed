@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	//session_start();
 	require_once('accessDB.php');
 	//	Modelo del elemento Usuario
 	class Post {
@@ -25,17 +25,23 @@
 	    public function insertarPost($datos){
 	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
 	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	    	print($datos['fecha']);
-
-
 	    	$sql = "INSERT INTO posts(idusuario, post, fecha) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."')";
-	    	print($sql);
 	    	$consulta = $pdo->exec($sql);
 	    	if ($consulta) {
 	    		print("Insertado.");
 	    	}else{
-	    		print("Error Insertando!!!!!!!!!");
+	    		print("Ha habido un error al guardar tu mensaje.");
 	    	}
+	    }
+
+	    public function mostrarPosts($idusuario){
+	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
+	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    	$sql = "SELECT * FROM posts WHERE idusuario=" . $idusuario;
+	 		$consulta = $pdo->query($sql);
+			$rows = $consulta->rowCount();
+			$registros = $consulta->fetchAll();
+			 return $registros;
 	    }
 	}
 
