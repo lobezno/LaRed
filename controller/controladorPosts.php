@@ -14,6 +14,10 @@ class ControladorPosts{
 	function volcar($id){
 		return Post::mostrarPosts($id);
 	}
+
+	function postsAmigos($id){
+		return Post::getFriendsPosts($id);
+	}
 	
 }
 

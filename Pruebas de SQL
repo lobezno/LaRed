@@ -1,0 +1,5 @@
+SELECT u.nombre,p.post FROM usuarios u, posts p WHERE u.idusuario=p.idusuario AND u.idusuario IN (SELECT idamigo2 from amigos a, usuarios u WHERE u.idusuario = a.idamigo1) 
+
+
+
+select * from usuarios u, posts p, amigos a WHERE u.idusuario = 3 AND u.idusuario = a.idamigo1 AND p.idusuario = a.idamigo2

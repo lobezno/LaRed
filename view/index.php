@@ -18,7 +18,7 @@
 		<ol>
 			<li><a href='#'><?php echo $user; ?></a></li>
 			<li><a href='#'>Perfil</a></li>
-			<li><a href='#'>Logout</a></li>
+			<li><a href='../logout.php'>Logout</a></li>
 		</ol>
 	</ul>
 	<section>
@@ -31,16 +31,31 @@
 		</div>	
 	</section>
 	<section>
+	<h3>Mis posts</h3>
 		<?php 
 			require_once('../controller/controladorPosts.php');
 			$registros = ControladorPosts::volcar($_SESSION['idusuario']);
 			foreach ($registros as $registro){
 				print("<div id='" . $registro['idpost'] . "'>");
 				print("<p>" . $registro['post'] . "</p>");
-				print("<footer>el " . $registro['fecha'] . "</footer>");
+				print("<footer>Por " . $registro['usuario'] ." el " . $registro['fecha'] . "</footer>");
 				print("</div>");
 			}
 			unset($registro);
+
+		 ?>
+	</section>
+	<section>
+	<h3>Posts de mis amigos</h3>
+		<?php 
+			$postsAmigos = ControladorPosts::postsAmigos($_SESSION['idusuario']);
+			foreach ($postsAmigos as $post) {
+				print("<div id='" . $post['idpost'] . "'>");
+				print("<p>" . $post['post'] . "</p>");
+				print("<footer>Por " . $post['usuario'] ." el " . $post['fecha'] . "</footer>");
+				print("</div>");
+			}
+			unset($post);
 
 		 ?>
 	</section>
@@ -51,11 +66,11 @@
 		}
 		else if(@$_SESSION['fail']){
 			//	codigo de fail autentificando
-			
+
 			?>
 
 			<h1>Fail</h1>
-
+			<a href="../view/login.php">Log In</a>
 
 
 			<?php
@@ -67,12 +82,11 @@
 			?>
 
 		<h1>Primera visita</h1>
-
-
+		<a href="../view/login.php">Log In</a>
 
 			<?php
 		}
-		
+	
 	?>
 
 	

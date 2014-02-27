@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-02-2014 a las 16:31:17
+-- Tiempo de generación: 27-02-2014 a las 16:07:58
 -- Versión del servidor: 5.5.32
 -- Versión de PHP: 5.4.19
 
@@ -19,33 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `lared`
 --
-CREATE DATABASE IF NOT EXISTS `lared` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `lared`;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `posts`
---
-
-CREATE TABLE IF NOT EXISTS `posts` (
-  `idpost` int(11) NOT NULL AUTO_INCREMENT,
-  `idusuario` int(11) NOT NULL,
-  `post` varchar(250) NOT NULL,
-  `fecha` date NOT NULL,
-  PRIMARY KEY (`idpost`),
-  UNIQUE KEY `idusuario_2` (`idusuario`),
-  KEY `idusuario` (`idusuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
-
---
--- Volcado de datos para la tabla `posts`
---
-
-INSERT INTO `posts` (`idpost`, `idusuario`, `post`, `fecha`) VALUES
-(1, 5, 'tralaralirto', '2014-02-05'),
-(2, 9, 'Tralari', '2014-02-06'),
-(3, 3, 'tralarotoooooo', '0000-00-00');
 
 -- --------------------------------------------------------
 
