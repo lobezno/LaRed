@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"us",
+				"user"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"pos",
+				"postsAmigos"
+			],
+			[
 				"id",
 				"idusuario"
 			],
@@ -18,10 +34,6 @@
 			[
 				"paddin",
 				"padding"
-			],
-			[
-				"pos",
-				"position"
 			],
 			[
 				"text",
@@ -459,22 +471,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/xampp/htdocs/ejercicio2/index.php",
-			"settings":
-			{
-				"buffer_size": 374,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/xampp/htdocs/ejercicio2/mostrar.php",
-			"settings":
-			{
-				"buffer_size": 1492,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -540,6 +536,17 @@
 	},
 	"file_history":
 	[
+		"/E/xampp/htdocs/LaRed/model/post.php",
+		"/E/xampp/htdocs/LaRed/model/usuario.php",
+		"/E/xampp/htdocs/LaRed/controller/controladorPosts.php",
+		"/E/xampp/htdocs/LaRed/view/login.php",
+		"/E/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
+		"/E/xampp/htdocs/LaRed/view/profile.php",
+		"/E/xampp/htdocs/LaRed/view/index.php",
+		"/E/xampp/htdocs/LaRed/view/logout.php",
+		"/E/xampp/htdocs/LaRed/view/signin.php",
+		"/C/xampp/htdocs/ejercicio2/mostrar.php",
+		"/C/xampp/htdocs/ejercicio2/index.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_con_xajax/productos.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_con_xajax/include/CestaCompra.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/ej_checkbox_xajax/index.php",
@@ -656,22 +663,11 @@
 		"/C/Users/usuario/Dropbox/DAW/DWES/Unidad 9 - Generacion dinamica de paginas web interactivas/ejemplo_jQuery/funciones1.js",
 		"/C/Users/usuario/Dropbox/DAW/DWES/Unidad 9 - Generacion dinamica de paginas web interactivas/ejemplo_jQuery/jquery.js",
 		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/PHP Companion/PHP Companion.sublime-settings",
-		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/User/PHP Companion.sublime-settings",
-		"/C/Users/usuario/Desktop/asd.html",
-		"/C/xampp/htdocs/ajax/zodiaco/index.html",
-		"/C/xampp/htdocs/ajax/zodiaco/pagina1.php",
-		"/C/xampp/htdocs/PracticaUnidad8/index.php",
-		"/C/xampp/htdocs/PracticaUnidad8/db.php",
-		"/C/xampp/htdocs/proyecto/embla/app/views/admin/users/list.blade.php",
-		"/C/xampp/htdocs/proyecto/embla/app/routes.php",
-		"/C/xampp/htdocs/proyecto/embla/app/views/template.blade.php",
-		"/C/xampp/htdocs/proyecto/embla/app/views/admin/layout.blade.php",
-		"/C/xampp/htdocs/proyecto/embla/app/views/admin/users/form.blade.php",
-		"/C/xampp/htdocs/proyecto/embla/public/index.php"
+		"/C/Users/usuario/AppData/Roaming/Sublime Text 3/Packages/User/PHP Companion.sublime-settings"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -742,153 +738,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/xampp/htdocs/ejercicio2/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 374,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								374,
-								374
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/xampp/htdocs/ejercicio2/mostrar.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1492,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								922,
-								922
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -930,7 +781,7 @@
 	"project": "lared.sublime-project",
 	"replace":
 	{
-		"height": 86.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

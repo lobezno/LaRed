@@ -27,9 +27,9 @@
 	    	$sql = "INSERT INTO posts(idusuario, post, fecha) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."')";
 	    	$consulta = $pdo->exec($sql);
 	    	if ($consulta) {
-	    		print("Insertado.");
+	    		return true;
 	    	}else{
-	    		print("Ha habido un error al guardar tu mensaje.");
+	    		return false;
 	    	}
 	    }
 

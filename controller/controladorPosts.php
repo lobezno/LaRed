@@ -8,7 +8,13 @@ class ControladorPosts{
 	function enviar(){
 		$hoy = date("Y-m-d");
 		$datos = array("user" => $_POST['user'], "post" => $_POST['post'], "fecha" => $hoy);
-		Post::insertarPost($datos);
+		$resultado = Post::insertarPost($datos);
+		if ($resultado) {
+			print("Post insertado :)");
+			header("Refresh: 2; url='../view/index.php'");
+		}else{
+			print("Error insertando el post.");
+		}
 	}
 
 	function volcar($id){

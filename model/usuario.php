@@ -1,5 +1,4 @@
-<?php
-	session_start();
+<?php if(!isset($_SESSION)){ session_start(); }  
 	require_once('accessDB.php');
 	//	Modelo del elemento Usuario
 	class Usuario {
@@ -34,11 +33,13 @@
 			 if ($rows == 1) {
 			 	$_SESSION['usuario-validado'] = $us;
 			 	$_SESSION['idusuario'] = $registro['idusuario'];
+			 	print("WOWOWOWO:" . $_SESSION['usuario-validado']);
+			 	print($us);
 			 	header('Location: ../view/index.php');
 				return true;
 			 }else{
 			 	$_SESSION['fail'] = true;
-			 	header('Location: ../view/index.php');
+			 	//header('Location: ../view/index.php');
 			 	return false;
 			 }
 	    }
@@ -52,10 +53,18 @@
 	    	$consulta = $pdo->exec($sql);
 	    	
 	    	if ($consulta) {
-	    		print("Insertado.");
+	    		return true;
 	    	}else{
-	    		print("Error Insertando!!!!!!!!!");
+	    		return false;
 	    	}
+	    }
+
+	    public function getMyInfo($idusuario){
+	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
+	    	$sql = "SELECT * FROM usuarios WHERE idusuario =" . $idusuario;
+	    	$consulta = $pdo->query($sql);
+	    	$rows = $consulta->fetch();
+	    	return $rows;
 	    }
 	}
 

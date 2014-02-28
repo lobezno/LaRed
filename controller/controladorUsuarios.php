@@ -3,24 +3,40 @@
 	require_once('../model/accessDB.php');
 
 
-
+class ControladorUsuarios{
 	function entrar(){
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
-		Usuario::check($user,$pass);
+		$resultado = Usuario::check($user,$pass);
+		if ($resultado) {
+			print("true");
+		}else{
+			print("false");
+		}
 	}
 
 	function registraUsuario(){
 		$datos = array("user" => $_POST['user'], "pass" => $_POST['pass'], "nombre" => $_POST['nombre'], "mail" => $_POST['mail']);
-		Usuario::insertarUsuario($datos);
+		$resultado = Usuario::insertarUsuario($datos);
+		if ($resultado) {
+			print("Usuario insertado! :)");
+			header("Refresh: 3; url='../view/index.php'");
+
+		}else{
+			print("Mal :(");
+		}
 	}
 
-	switch($_GET['action']){
+	function miInfo($idusuario){
+		return Usuario::getMyInfo($idusuario);
+	}
+}
+	switch(@$_GET['action']){
 		case 'login': 
-			entrar();
+			ControladorUsuarios::entrar();
 			break;
 		case 'signin':
-			registraUsuario();
+			ControladorUsuarios::registraUsuario();
 			break;
 	}
 
