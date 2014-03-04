@@ -4,13 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<title>LaRed - Index</title>
+	<link rel="stylesheet" href="../resources/css/pruebas.css">
 </head>
 <body>
-<?php
+<?php 	
 		// Modulo para comprobar la autenticacion del usuario
-		if (isset($_SESSION['usuario-validado'])) {
-			$user = $_SESSION['usuario-validado'];
-			$idusuario = $_SESSION['idusuario'];
+		include_once('../controller/acceso.php');
 			//	Usuario Autentificado
 			?>
 
@@ -30,14 +29,26 @@
 			</form>
 		</div>	
 	</section>
-	<section>
-	<h3>Mis posts</h3>
+	<section id="actividadReciente">
+		<h3>Actividad Reciente</h3>
+		<?php require_once('../controller/controladorPosts.php');
+			$posts = ControladorPosts::actividadReciente();
+			foreach ($posts as $post) {
+				print("<div>");
+				print("<p>" . $post['post'] . "</p>");
+				print("<p>Por <a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a></p>");
+				print("</div>");
+			}
+
+		 ?>
+	</section>
+	<section id="misPost">
+		<h3>Mis posts</h3>
 		<?php 
-			require_once('../controller/controladorPosts.php');
 			$registros = ControladorPosts::volcar($idusuario);
 			if (count($registros) > 0) {
 			foreach ($registros as $registro){
-				print("<div id='" . $registro['idpost'] . "'>");
+				print("<div class='post' id='" . $registro['idpost'] . "'>");
 				print("<p>" . $registro['post'] . "</p>");
 				print("<footer>Por " . $registro['usuario'] ." el " . $registro['fecha'] . "</footer>");
 				print("</div>");
@@ -50,12 +61,12 @@
 		 ?>
 	</section>
 	<section>
-	<h3>Posts de mis amigos</h3>
+		<h3>Posts de mis amigos</h3>
 		<?php 
 			$postsAmigos = ControladorPosts::postsAmigos($idusuario);
 			if (count($postsAmigos) > 0) {
 				foreach ($postsAmigos as $post) {
-					print("<div id='" . $post['idpost'] . "'>");
+					print("<div class='postAmigo' id='" . $post['idpost'] . "'>");
 					print("<p>" . $post['post'] . "</p>");
 					print("<footer>Por " . $post['usuario'] ." el " . $post['fecha'] . "</footer>");
 					print("</div>");
@@ -68,36 +79,25 @@
 
 		 ?>
 	</section>
+	<section>
+		<h3>Mis Amigos</h3>
+		<?php 
+			require_once('../controller/controladorUsuarios.php');
+			$amigos = ControladorUsuarios::misAmigos($idusuario);
+			if (count($amigos) > 0) {
+				foreach ($amigos as $amigo) {
+					print("<div>");
+					print("<p><a href='../view/user.php?id=" . $amigo['idusuario'] . "'>" . $amigo['usuario'] ."</a></p>");
+					print("</div>");
+				}	
+				unset($amigo);
+			}else{
+				print("<p>No tienes  amigos :(((</p>");
+			}
+		 ?>
+	</section>
 	
 
-
-			<?php
-		}
-		else if(@$_SESSION['fail']){
-			//	codigo de fail autentificando
-
-			?>
-
-			<h1>Fail</h1>
-			<p><a href="../view/login.php">Log In</a></p>
-			<p><a href="../view/signin.php">Registrar</a></p>
-
-
-			<?php
-
-
-		}else{
-			//	codigo de la primera visita
-			?>
-
-		<h1>Primera visita</h1>
-		<p><a href="../view/login.php">Log In</a></p>
-		<p><a href="../view/signin.php">Registrar</a></p>
-
-			<?php
-		}
-	
-	?>
 
 	
 </body>

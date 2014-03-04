@@ -8,10 +8,8 @@ class ControladorUsuarios{
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
 		$resultado = Usuario::check($user,$pass);
-		if ($resultado) {
-			print("true");
-		}else{
-			print("false");
+		if (!$resultado) {
+			header("Location: ../view/forbiden.php?error=fail");
 		}
 	}
 
@@ -30,6 +28,44 @@ class ControladorUsuarios{
 	function miInfo($idusuario){
 		return Usuario::getMyInfo($idusuario);
 	}
+
+	function misAmigos($idusuario){
+		return Usuario::getMisAmigos($idusuario);
+	}
+
+	function atri($id,$usuario){
+		print("<p>Por <a href='../view/user.php?id=" . $id ."'>" . $usuario . "</a></p>");
+	}
+
+	function esAmigo($id,$idamigo){
+		if (Usuario::isFriend($id,$idamigo)) {
+			return true;
+		}else{
+			return false;
+	}
+
+	}
+
+	function aniadirAmigo(){
+		$id = $_GET['parama'];
+		$idamigo = $_GET['paramb'];
+		if ($id == $idamigo) {
+			print("No puedes ser amigo tuyo!");
+			header("Refresh: 2; url='../view/index.php'");
+		}else{
+			if (self::esAmigo($id,$idamigo)) {
+				print("Ya es tu amigo!");
+				header("Refresh: 2; url='../view/index.php'");
+			}else{
+				Usuario::addFriend($id,$idamigo);	
+			}
+		}
+	}
+
+	function subirImagen(){
+		$idusuario = $_POST['idusuario'];
+		Usuario::uploadImage($idusuario);
+	}
 }
 	switch(@$_GET['action']){
 		case 'login': 
@@ -37,6 +73,12 @@ class ControladorUsuarios{
 			break;
 		case 'signin':
 			ControladorUsuarios::registraUsuario();
+			break;
+		case 'add':
+			ControladorUsuarios::aniadirAmigo();
+			break;
+		case 'upload':
+			ControladorUsuarios::subirImagen();
 			break;
 	}
 

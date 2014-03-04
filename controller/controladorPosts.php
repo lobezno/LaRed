@@ -12,6 +12,7 @@ class ControladorPosts{
 		if ($resultado) {
 			print("Post insertado :)");
 			header("Refresh: 2; url='../view/index.php'");
+			
 		}else{
 			print("Error insertando el post.");
 		}
@@ -23,6 +24,14 @@ class ControladorPosts{
 
 	function postsAmigos($id){
 		return Post::getFriendsPosts($id);
+	}
+
+	function actividadReciente(){
+		return Post::getRecentPosts();
+	}
+
+	function meGusta($idpost){
+		Post::like($idpost);
 	}
 	
 }

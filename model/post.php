@@ -21,11 +21,21 @@
 
 	    // Otros métodos
 
+	    protected static function ejecutaConsulta($sql) {
+	        $opciones = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
+	        $host = "mysql:host=localhost;dbname=lared";
+	        $dbuser = 'root';
+	        $dbpass = '';
+	        $pdo = new PDO($host, $dbuser, $dbpass, $opciones);
+	        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	        $resultado = null;
+	        if (isset($pdo)) $resultado = $pdo->query($sql);
+	        return $resultado;
+	    }
+
 	    public function insertarPost($datos){
-	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
-	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    	$sql = "INSERT INTO posts(idusuario, post, fecha) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."')";
-	    	$consulta = $pdo->exec($sql);
+	    	$consulta = self::ejecutaConsulta($sql);
 	    	if ($consulta) {
 	    		return true;
 	    	}else{
@@ -34,10 +44,8 @@
 	    }
 
 	    public function mostrarPosts($idusuario){
-	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
-	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	    	$sql = "SELECT * FROM posts p,usuarios u WHERE p.idusuario = " . $idusuario ." and p.idusuario = u.idusuario";
-	 		$consulta = $pdo->query($sql);
+	 		$consulta = self::ejecutaConsulta($sql);
 			$rows = $consulta->rowCount();
 			$registros = $consulta->fetchAll();
 			// Devuelve los posty el nombre de los amigos
@@ -45,17 +53,27 @@
 			 return $registros;
 	    }
 	    public function getFriendsPosts($idusuario){
-	    	$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
-	    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	    	
 	    	$sql = "SELECT u.*, p.*, a.* FROM usuarios u, posts p, amigos a WHERE a.idamigo1 = " . $idusuario ." and p.idusuario = a.idamigo2 AND u.idusuario = a.idamigo2";
 
-	 		$consulta = $pdo->query($sql);
+	 		$consulta = self::ejecutaConsulta($sql);
 			$rows = $consulta->rowCount();
 			$postsAmigos = $consulta->fetchAll();
 			return $postsAmigos;
 	    }
 
-	}
+	    public function getRecentPosts(){
+	    	
+	    	$sql = "SELECT p.post, u.usuario,u.idusuario from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.idpost DESC LIMIT 3";
+	 		$consulta = self::ejecutaConsulta($sql);
+			$posts = $consulta->fetchAll();
+			return $posts;
+	    }
 
+	    public function like($idpost){
+
+	    }
+
+	}
 	?>
 

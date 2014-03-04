@@ -1,0 +1,22 @@
+.comentario{
+	border: solid black;
+}
+
+.post{
+	width: 300px;
+	border: 1px solid black;
+}
+
+.postAmigo{
+	width: 300px;
+	border: 1px solid  black;
+}
+
+.avatar{
+	width: 50px;
+
+}
+
+.foto{
+	width: 100px;
+}
