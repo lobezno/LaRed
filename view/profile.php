@@ -9,6 +9,7 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Perfil - <?php echo $user; ?></title>
 	<link rel="stylesheet" href="../resources/css/pruebas.css">
+	<script type="text/javascript" src="../resources/js/calendario.js"></script>
 </head>
 <body>
 	<header>
@@ -36,6 +37,11 @@
 		    <input type="hidden" name="idusuario" id="idusuario" value="<?php echo $idusuario; ?>">
 		    <input type="submit" name="subir" value="Subir"/>
 		</form>
+	</section>
+	<section id="calendario">
+		<article id="contenedor_calendario">
+			
+		</article>
 	</section>
 </body>
 </html>

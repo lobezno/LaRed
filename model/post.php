@@ -63,15 +63,27 @@
 	    }
 
 	    public function getRecentPosts(){
-	    	
-	    	$sql = "SELECT p.post, u.usuario,u.idusuario from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.idpost DESC LIMIT 3";
+	    	$sql = "SELECT p.post, u.usuario,u.idusuario,p.likes,p.idpost from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.idpost DESC LIMIT 3";
 	 		$consulta = self::ejecutaConsulta($sql);
 			$posts = $consulta->fetchAll();
 			return $posts;
 	    }
 
 	    public function like($idpost){
+	    	$sql = "UPDATE posts SET likes=likes+1 WHERE idpost = " . $idpost;
+	    	$consulta = self::ejecutaConsulta($sql);
+	    	if ($consulta) {
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
+	    }
 
+	    public function topPost(){
+			$sql = "SELECT p.post, u.usuario,u.idusuario,p.likes,p.idpost from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.likes DESC LIMIT 3";
+	 		$consulta = self::ejecutaConsulta($sql);
+			$topPosts = $consulta->fetchAll();
+			return $topPosts;
 	    }
 
 	}

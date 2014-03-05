@@ -1,3 +1,6 @@
+body{
+	font-family: Verdana;
+}
 .comentario{
 	border: solid black;
 }
@@ -19,4 +22,51 @@
 
 .foto{
 	width: 100px;
+}
+
+#calendario{
+	border: 3px red solid;
+	overflow: hidden;
+	font-size: 0.7em;
+	width: 40%;
+	
+}
+
+.caja_calendario{
+	display: inline-block;
+	width: 12%;
+	height: 10%;
+	margin: 3px;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 3
+
+	
+}
+
+.caja_calendario_hidden{
+	display: inline-block;
+	width: 12%;
+	height: 10%;
+	margin: 4px;
+	padding: 0;
+	display: hidden;
+}
+
+.caja_calendario_headers{
+	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+	width: 12%;
+	height: 10%;
+	margin: 3px;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 3
+
+	
+}
+
+.botonera_calendario{
+	text-align: center;
 }

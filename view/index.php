@@ -36,7 +36,9 @@
 			foreach ($posts as $post) {
 				print("<div>");
 				print("<p>" . $post['post'] . "</p>");
+				print("<p>Likes: " . $post['likes'] . "</p>");
 				print("<p>Por <a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a></p>");
+				print("<span><a href='../controller/controladorPosts.php?action=like&id=" . $post['idpost'] . "'>Me gusta!</a></span>");
 				print("</div>");
 			}
 
@@ -96,7 +98,25 @@
 			}
 		 ?>
 	</section>
-	
+	<section>
+		<h3>Mejores Posts</h3>
+		<?php 
+		$topPosts = ControladorPosts::masVotados();
+		if (count($topPosts) > 0) {
+			foreach ($topPosts as $post) {
+				print("<div>");
+				print("<p>" . $post['post'] . "</p>");
+				print("<p>Likes: " . $post['likes'] . "</p>");
+				ControladorUsuarios::atri($post['idusuario'],$post['usuario']);
+				print("</div>");
+			}
+			unset($post);
+		}else{
+			print("<p>No hay suficientes posts con votos.</p>");
+		}
+
+		 ?>
+	</section>
 
 
 	

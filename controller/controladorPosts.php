@@ -31,7 +31,18 @@ class ControladorPosts{
 	}
 
 	function meGusta($idpost){
-		Post::like($idpost);
+		$resultado = Post::like($idpost);
+		if ($resultado) {
+			print("Te gusta :)");
+			header("Refresh: 2; url='../view/index.php'");
+		}else{
+			print("Error.");
+			header("Refresh: 2; url='../view/index.php'");
+		}
+	}
+
+	function masVotados(){
+		return Post::topPost();
 	}
 	
 }
@@ -39,6 +50,9 @@ class ControladorPosts{
 		switch(@$_GET['action']){
 			case 'send': 
 				ControladorPosts::enviar();
+				break;
+			case 'like': 
+				ControladorPosts::meGusta(@$_GET['id']);
 				break;
 
 		}
