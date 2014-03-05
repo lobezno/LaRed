@@ -33,8 +33,8 @@ class ControladorUsuarios{
 		return Usuario::getMisAmigos($idusuario);
 	}
 
-	function atri($id,$usuario){
-		print("<p>Por <a href='../view/user.php?id=" . $id ."'>" . $usuario . "</a></p>");
+	function atri($post){
+		print("<p>Por <a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a> el " . $post['fecha'] . "</p>");
 	}
 
 	function esAmigo($id,$idamigo){

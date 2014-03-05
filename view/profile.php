@@ -26,7 +26,6 @@
 			print("<figure>");
 			print("<img id='avatar' class='avatar' src='../view/imagen.php?id=" . $idusuario . "' />");
 			print("</figure>");
-			http://localhost/lared/view/imagen.php?id=1
 
 	?>
 

@@ -20,7 +20,7 @@
 	    }
 
 	    function getComments($idusuario){
-	    	$sql = "SELECT * FROM comentarios c, usuarios u WHERE c.recipiente = " . $idusuario . " AND c.remitente = u.idusuario";
+	    	$sql = "SELECT * FROM comentarios c, usuarios u WHERE c.recipiente = '" . $idusuario . "' AND c.remitente = u.idusuario";
 	    	$resultado = self::ejecutaConsulta($sql);
 	    	$comentarios = $resultado->fetchAll();
 	    	return $comentarios;
@@ -42,3 +42,4 @@
 
 	}
  ?>
+

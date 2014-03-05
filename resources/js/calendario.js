@@ -1,8 +1,6 @@
-
-var pinta = function pintaCalendario(){
-	alert("hola");
-	var divCalendario = document.getElementById('calendario');
-	var divContenedorCalendario = document.getElementById('contenedor_calendario');
+	
+	var divContenedorCalendario;
+	var divCalendario;
 	var hoy = new Date();
 	var meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 	var diasMes = [31,28,31,30,31,30,31,31,30,31,30,31];
@@ -10,19 +8,49 @@ var pinta = function pintaCalendario(){
 	var diaNum = hoy.getDay();
 	var mesNum = hoy.getMonth();
 	var anoNum = hoy.getFullYear();
+
+function sumaMes(){
+	if (mesNum < 11) {
+ 		mesNum ++;
+ 		pinta();
+	}else{
+		mesNum = 0;
+		anoNum++;
+ 		pinta();
+	}
+}
+
+function restaMes(){
+	if (mesNum > 0) {
+ 		mesNum --
+ 		pinta();
+	}else{
+		mesNum = 11;
+		anoNum--;
+ 		pinta();
+	}
+}
+
+
+var pinta = function(){
+	if(calendario) divContenedorCalendario.innerHTML = "";
 	console.log("Mesnum:" + mesNum + "\nanoNum: " + anoNum);
 	console.log("Dias mes: "+diasMes[mesNum]);
-	
 
 	var dateAux = new Date; 
 	dateAux.setYear(anoNum)
+	alert(mesNum);
 	dateAux.setMonth(mesNum);
-	dateAux.setDate(0);
+
+	dateAux.setDate(1);
+alert(dateAux.getMonth());
+
 	console.log("Dia inicio: " + dateAux.getDay());
 	var botonera = document.createElement('div');
 	botonera.className = "botonera_calendario";
 	var botonMenos = document.createElement('button');
 	var textoBotonMenos = document.createTextNode("<");
+	botonMenos.setAttribute('onclick','javascript:restaMes();');
 	botonMenos.appendChild(textoBotonMenos);
 	botonera.appendChild(botonMenos);
 	var botonMedio = document.createElement('button');
@@ -31,11 +59,11 @@ var pinta = function pintaCalendario(){
 	botonera.appendChild(botonMedio);
 	var botonMas = document.createElement('button');
 	var textoBotonMas = document.createTextNode(">");
-	botonMas.setAttribute('onclick','javascript:pintaCalendario();');
+	botonMas.setAttribute('onclick','javascript:sumaMes();');
 	botonMas.appendChild(textoBotonMas);
 	botonera.appendChild(botonMas);
 	divContenedorCalendario.appendChild(botonera);
-
+	
 	for (var i = 0; i < 7; i++) {
 		for (var j = 0; j < 7; j++) {
 			var nodo = document.createElement('div');
@@ -43,7 +71,7 @@ var pinta = function pintaCalendario(){
 			if (i < 1) {
 				nodo.className = "caja_calendario_headers";
 				var texto = document.createTextNode(diasSemana[j]);
-			}else if (i==1 && j == dateAux.getDay()) {
+			}else if (i==1 && j == dateAux.getDay() - 1) {
 				var contaDias = 1;
 				var texto = document.createTextNode(contaDias);
 			}else if (i==1 && j < dateAux.getDay() || contaDias >= diasMes[mesNum]) {
@@ -52,8 +80,11 @@ var pinta = function pintaCalendario(){
 			}else{
 				contaDias++;
 				var texto = document.createTextNode(contaDias);
+				diaFormateado = contaDias + "-" + (dateAux.getMonth() + 1) + "-" + dateAux.getFullYear();
+			nodo.setAttribute('id',diaFormateado);
 
 			}
+
 			nodo.appendChild(texto);
 			divContenedorCalendario.appendChild(nodo);
 		};
@@ -63,6 +94,8 @@ var pinta = function pintaCalendario(){
 }
 
 window.onload = function(){
+	divContenedorCalendario = document.getElementById('contenedor_calendario');
+	divCalendario = document.getElementById('calendario');
 	pinta();
 }
 

@@ -69,8 +69,9 @@
 	    public function getMyInfo($idusuario){
 	    	$sql = "SELECT * FROM usuarios WHERE idusuario =" . $idusuario;
 	    	$consulta = self::ejecutaConsulta($sql);
-	    	$rows = $consulta->fetch();
-	    	return $rows;
+	    	$row = $consulta->fetch();
+	    	var_dump($row);
+	    	return $row;
 	    }
 
 	    public function getMisAmigos($id){

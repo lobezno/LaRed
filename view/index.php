@@ -10,6 +10,10 @@
 <?php 	
 		// Modulo para comprobar la autenticacion del usuario
 		include_once('../controller/acceso.php');
+
+		// Carga de controladores
+		require_once('../controller/controladorUsuarios.php');
+		require_once('../controller/controladorPosts.php');
 			//	Usuario Autentificado
 			?>
 
@@ -31,71 +35,70 @@
 	</section>
 	<section id="actividadReciente">
 		<h3>Actividad Reciente</h3>
-		<?php require_once('../controller/controladorPosts.php');
-			$posts = ControladorPosts::actividadReciente();
+		<?php 
+		$posts = ControladorPosts::actividadReciente();
+		if (count($posts)>0){
 			foreach ($posts as $post) {
 				print("<div>");
 				print("<p>" . $post['post'] . "</p>");
 				print("<p>Likes: " . $post['likes'] . "</p>");
-				print("<p>Por <a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a></p>");
-				print("<span><a href='../controller/controladorPosts.php?action=like&id=" . $post['idpost'] . "'>Me gusta!</a></span>");
+				ControladorUsuarios::atri($post);
+				print("<span><a href='../controller/controladorPosts.php?action=like&id=" . $post['idpost'] . "&idusuario=" . $idusuario ."'>Me gusta!</a></span>");
 				print("</div>");
-			}
-
+				}
+		}else{
+			print("<p>No hay actividad reciente. Esto est&acute; muerto</p>");
+		}
 		 ?>
 	</section>
 	<section id="misPost">
 		<h3>Mis posts</h3>
 		<?php 
-			$registros = ControladorPosts::volcar($idusuario);
-			if (count($registros) > 0) {
-			foreach ($registros as $registro){
-				print("<div class='post' id='" . $registro['idpost'] . "'>");
-				print("<p>" . $registro['post'] . "</p>");
-				print("<footer>Por " . $registro['usuario'] ." el " . $registro['fecha'] . "</footer>");
-				print("</div>");
-			}
-			unset($registro);
-			}else{
-				print("<p>No tienes actividad reciente. Por que no posteas algo?</p>");
-			}
-
+		$registros = ControladorPosts::volcar($idusuario);
+		if (count($registros) > 0) {
+		foreach ($registros as $registro){
+			print("<div class='post' id='" . $registro['idpost'] . "'>");
+			print("<p>" . $registro['post'] . "</p>");
+			ControladorUsuarios::atri($post);
+			print("</div>");
+		}
+		unset($registro);
+		}else{
+			print("<p>No tienes actividad reciente. Por que no posteas algo?</p>");
+		}
 		 ?>
 	</section>
 	<section>
 		<h3>Posts de mis amigos</h3>
 		<?php 
-			$postsAmigos = ControladorPosts::postsAmigos($idusuario);
-			if (count($postsAmigos) > 0) {
-				foreach ($postsAmigos as $post) {
-					print("<div class='postAmigo' id='" . $post['idpost'] . "'>");
-					print("<p>" . $post['post'] . "</p>");
-					print("<footer>Por " . $post['usuario'] ." el " . $post['fecha'] . "</footer>");
-					print("</div>");
-				}
-				unset($post);
-			}else{
-				print("<p>No tienes actividad de tus amigos :(</p>");
+		$postsAmigos = ControladorPosts::postsAmigos($idusuario);
+		if (count($postsAmigos) > 0) {
+			foreach ($postsAmigos as $post) {
+				print("<div class='postAmigo' id='" . $post['idpost'] . "'>");
+				print("<p>" . $post['post'] . "</p>");
+				ControladorUsuarios::atri($post);
+				print("</div>");
 			}
-			
-
+			unset($post);
+		}else{
+			print("<p>No tienes actividad de tus amigos :(</p>");
+		}
 		 ?>
 	</section>
 	<section>
 		<h3>Mis Amigos</h3>
 		<?php 
-			require_once('../controller/controladorUsuarios.php');
-			$amigos = ControladorUsuarios::misAmigos($idusuario);
-			if (count($amigos) > 0) {
-				foreach ($amigos as $amigo) {
-					print("<div>");
-					print("<p><a href='../view/user.php?id=" . $amigo['idusuario'] . "'>" . $amigo['usuario'] ."</a></p>");
-					print("</div>");
-				}	
-				unset($amigo);
-			}else{
-				print("<p>No tienes  amigos :(((</p>");
-			}
+		$amigos = ControladorUsuarios::misAmigos($idusuario);
+		if (count($amigos) > 0) {
+			foreach ($amigos as $amigo) {
+				print("<div>");
+				print("<p><a href='../view/user.php?id=" . $amigo['idusuario'] . "'>" . $amigo['usuario'] ."</a></p>");
+				print("</div>");
+			}	
+			unset($amigo);
+		}else{
+			print("<p>No tienes  amigos :(((</p>");
+		}
 		 ?>
 	</section>
 	<section>
@@ -107,7 +110,7 @@
 				print("<div>");
 				print("<p>" . $post['post'] . "</p>");
 				print("<p>Likes: " . $post['likes'] . "</p>");
-				ControladorUsuarios::atri($post['idusuario'],$post['usuario']);
+				ControladorUsuarios::atri($post);
 				print("</div>");
 			}
 			unset($post);
@@ -118,7 +121,13 @@
 		 ?>
 	</section>
 
-
+	<section>
+		<h3>Busca Gente</h3>
+		<form>
+			<input type="text" placeholder='Introduce el nombre de usuario  a buscar'>
+			<input type="button" value="Buscar">
+		</form>
+	</section>
 	
 </body>
 </html>

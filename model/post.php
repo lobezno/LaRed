@@ -63,13 +63,13 @@
 	    }
 
 	    public function getRecentPosts(){
-	    	$sql = "SELECT p.post, u.usuario,u.idusuario,p.likes,p.idpost from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.idpost DESC LIMIT 3";
+	    	$sql = "SELECT p.post, u.usuario,u.idusuario,p.likes,p.idpost,p.fecha from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.idpost DESC LIMIT 3";
 	 		$consulta = self::ejecutaConsulta($sql);
 			$posts = $consulta->fetchAll();
 			return $posts;
 	    }
 
-	    public function like($idpost){
+/*	    public function like($idpost){
 	    	$sql = "UPDATE posts SET likes=likes+1 WHERE idpost = " . $idpost;
 	    	$consulta = self::ejecutaConsulta($sql);
 	    	if ($consulta) {
@@ -77,13 +77,46 @@
 	    	}else{
 	    		return false;
 	    	}
+	    }*/
+
+	    public function like($idpost,$idusuario){
+
+    	try {  
+	    		$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$pdo->beginTransaction();
+				$pdo->exec("INSERT INTO likes VALUES (" . $idpost . "," . $idusuario . ")");
+				$pdo->exec("UPDATE posts SET likes=likes+1 WHERE idpost = " . $idpost);
+  				$pdo->commit();
+  				return true;
+				  
+			}catch (Exception $e) {
+				  $pdo->rollBack();
+				  echo "Error en transaccion: " . $e->getMessage();
+				  return false;
+			}
+
 	    }
 
 	    public function topPost(){
-			$sql = "SELECT p.post, u.usuario,u.idusuario,p.likes,p.idpost from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.likes DESC LIMIT 3";
-	 		$consulta = self::ejecutaConsulta($sql);
+			$sql2 = "SELECT p.post, u.usuario,u.idusuario,p.likes,p.idpost,p.fecha from posts p, usuarios u WHERE u.idusuario = p.idusuario ORDER BY p.likes DESC LIMIT 3";
+	 		
+	 		$consulta = self::ejecutaConsulta($sql2);
 			$topPosts = $consulta->fetchAll();
 			return $topPosts;
+	    }
+
+	    public function checkLike($idpost,$idusuario){
+
+	    	$sql = "SELECT * FROM likes WHERE idpost=" . $idpost . " AND idusuario=" . $idusuario;
+	
+	 		$consulta = self::ejecutaConsulta($sql);
+			$reg = $consulta->fetch();
+			if ($reg == null) {
+				return false;
+			}else{
+				return true;
+			}
 	    }
 
 	}

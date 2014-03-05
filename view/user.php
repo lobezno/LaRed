@@ -28,12 +28,13 @@
 	</figure>
 	<section id='comentarios'>
 		<?php 
+
 			$comentarios = ControladorComentarios::volcarComentarios($info['idusuario']); 
 			if (count($comentarios) > 0) {
 				foreach ($comentarios as $comentario) {
 					print("<article class='comentario'>");
 					print("<p>" . $comentario['comentario'] ."<p>");
-					ControladorUsuarios::atri($comentario['idusuario'],$comentario['usuario']);
+					ControladorUsuarios::atri($comentario);
 					print("</article>");
 				}
 				unset($comentario);

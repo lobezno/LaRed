@@ -30,15 +30,27 @@ class ControladorPosts{
 		return Post::getRecentPosts();
 	}
 
-	function meGusta($idpost){
-		$resultado = Post::like($idpost);
-		if ($resultado) {
-			print("Te gusta :)");
-			header("Refresh: 2; url='../view/index.php'");
+	function meGusta($idpost,$idusuario){
+
+
+		if (self::yaGusta($idpost,$idusuario)) {
+			print("Un solo me gusta por persona! No seas avaricioso.:)");
+			header("Refresh: 1; url='../view/index.php'");
 		}else{
-			print("Error.");
-			header("Refresh: 2; url='../view/index.php'");
+			$resultado = Post::like($idpost,$idusuario);
+			if ($resultado) {
+				print("Te gusta :)");
+				header("Refresh: 2; url='../view/index.php'");
+			}else{
+				print("Error.");
+				header("Refresh: 2; url='../view/index.php'");
+			}
 		}
+		
+	}
+
+	function yaGusta($idpost,$idusuario){
+		return Post::checkLike($idpost,$idusuario);
 	}
 
 	function masVotados(){
@@ -52,7 +64,7 @@ class ControladorPosts{
 				ControladorPosts::enviar();
 				break;
 			case 'like': 
-				ControladorPosts::meGusta(@$_GET['id']);
+				ControladorPosts::meGusta(@$_GET['id'],@$_GET['idusuario']);
 				break;
 
 		}
