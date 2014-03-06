@@ -6,7 +6,7 @@
 		header("Refresh: 2; url='../view/index.php'");
 		
 	}else{
-		print("<h3>No estás conectado!</h3>");
+		print("<h3>No est&aacute;s conectado!</h3>");
 		header("Refresh: 2; url='../view/index.php'");
 	}
 

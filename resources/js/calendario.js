@@ -9,6 +9,17 @@
 	var mesNum = hoy.getMonth();
 	var anoNum = hoy.getFullYear();
 
+function sigueme(e) {
+    var x = (document.layers || !document.all)? e.pageX : event.x+document.body.scrollLeft;
+    var y = (document.layers || !document.all)? e.pageY : event.y+document.body.scrollTop;
+    var x2 = x + 10;
+    var y2 = y + 10;
+    
+    document.getElementById('siguelo').style.left=x2+'px';
+    document.getElementById('siguelo').style.top=y2+'px';
+    
+    return true
+}
 
 function sumaMes(){
 	if (mesNum < 11) {
@@ -32,6 +43,16 @@ function restaMes(){
 	}
 }
 
+function verCita(dia){
+	//var elemento = document.getElementById(dia);
+	alert("Raton: " + );
+}
+
+function editarCita(dia){
+	//var elemento = document.getElementById(dia);
+	alert("editarCita: " + dia);
+}
+
 
 var pinta = function(){
 	var contaDias = 0;
@@ -47,6 +68,7 @@ var pinta = function(){
 	dateAux.setDate(1);
 
 
+	var botonera = document.createElement('div');
 	console.log("Dia inicio: " + dateAux.getDay());
 	var botonera = document.createElement('div');
 	botonera.className = "botonera_calendario";
@@ -84,6 +106,8 @@ var pinta = function(){
 				var texto = document.createTextNode(contaDias);
 				diaFormateado = contaDias + "-" + (dateAux.getMonth() + 1) + "-" + dateAux.getFullYear();
 			nodo.setAttribute('id',diaFormateado);
+			nodo.addEventListener('click',function(){ editarCita(this.getAttribute('id')) });
+			nodo.addEventListener('mouseover',function(){ verCita(this.getAttribute('id')) });
 
 			}
 
