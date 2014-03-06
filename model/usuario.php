@@ -70,7 +70,6 @@
 	    	$sql = "SELECT * FROM usuarios WHERE idusuario =" . $idusuario;
 	    	$consulta = self::ejecutaConsulta($sql);
 	    	$row = $consulta->fetch();
-	    	var_dump($row);
 	    	return $row;
 	    }
 

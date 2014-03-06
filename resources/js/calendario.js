@@ -9,6 +9,7 @@
 	var mesNum = hoy.getMonth();
 	var anoNum = hoy.getFullYear();
 
+
 function sumaMes(){
 	if (mesNum < 11) {
  		mesNum ++;
@@ -33,17 +34,18 @@ function restaMes(){
 
 
 var pinta = function(){
+	var contaDias = 0;
 	if(calendario) divContenedorCalendario.innerHTML = "";
 	console.log("Mesnum:" + mesNum + "\nanoNum: " + anoNum);
 	console.log("Dias mes: "+diasMes[mesNum]);
 
 	var dateAux = new Date; 
 	dateAux.setYear(anoNum)
-	alert(mesNum);
+	
 	dateAux.setMonth(mesNum);
 
 	dateAux.setDate(1);
-alert(dateAux.getMonth());
+
 
 	console.log("Dia inicio: " + dateAux.getDay());
 	var botonera = document.createElement('div');
@@ -72,7 +74,7 @@ alert(dateAux.getMonth());
 				nodo.className = "caja_calendario_headers";
 				var texto = document.createTextNode(diasSemana[j]);
 			}else if (i==1 && j == dateAux.getDay() - 1) {
-				var contaDias = 1;
+				 contaDias = 1;
 				var texto = document.createTextNode(contaDias);
 			}else if (i==1 && j < dateAux.getDay() || contaDias >= diasMes[mesNum]) {
 				var texto = document.createTextNode("");
