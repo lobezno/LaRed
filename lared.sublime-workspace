@@ -4,48 +4,40 @@
 		"selected_items":
 		[
 			[
-				"pass",
-				"passwordb"
+				"me",
+				"metodo"
+			],
+			[
+				"caja",
+				"cajaUsuario"
+			],
+			[
+				"valu",
+				"valueMissing"
+			],
+			[
+				"dia",
+				"diaFormateado"
+			],
+			[
+				"di",
+				"diaFormateado"
+			],
+			[
+				"get",
+				"getMonth"
+			],
+			[
+				"div",
+				"divContenedorCalendario"
+			],
+			[
+				"pinta",
+				"pintaCalendario"
 			],
 			[
 				"id",
 				"idusuario"
-			],
-			[
-				"boton",
-				"botonPostit"
-			],
-			[
-				"add",
-				"addEventListener"
-			],
-			[
-				"set",
-				"setAttribute"
-			],
-			[
-				"tex",
-				"textoPostit"
-			],
-			[
-				"post",
-				"postit"
-			],
-			[
-				"bak",
-				"background-color"
-			],
-			[
-				"postt",
-				"postit_visible"
-			],
-			[
-				"boro",
-				"border-color"
-			],
-			[
-				"back",
-				"background-color"
 			],
 			[
 				"pina",
@@ -64,6 +56,10 @@
 				"mesNum"
 			],
 			[
+				"boton",
+				"botonMenos"
+			],
+			[
 				"bor",
 				"border"
 			],
@@ -74,10 +70,6 @@
 			[
 				"ca",
 				"caja_calendario"
-			],
-			[
-				"get",
-				"getDay"
 			],
 			[
 				"ge",
@@ -130,6 +122,10 @@
 			[
 				"pos",
 				"postsAmigos"
+			],
+			[
+				"back",
+				"background-image"
 			],
 			[
 				"border",
@@ -356,6 +352,10 @@
 				"j"
 			],
 			[
+				"bak",
+				"background-image"
+			],
+			[
 				"padd",
 				"padding"
 			],
@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "resources/js/validacion.js",
+			"settings":
+			{
+				"buffer_size": 739,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -526,10 +534,6 @@
 		"height": 58.0,
 		"selected_items":
 		[
-			[
-				"install",
-				"Package Control: Install Package"
-			],
 			[
 				"json",
 				"Set Syntax: JSON"
@@ -541,6 +545,10 @@
 			[
 				"Package Control: list",
 				"Package Control: List Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
 			],
 			[
 				"test",
@@ -563,7 +571,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 328.0
+		"width": 480.0
 	},
 	"console":
 	{
@@ -584,22 +592,34 @@
 	},
 	"file_history":
 	[
-		"/E/xampp/htdocs/LaRed/view/validandoPrueba.html",
-		"/E/xampp/htdocs/LaRed/view/signin.php",
-		"/E/xampp/htdocs/LaRed/resources/js/validacion.js",
-		"/E/xampp/htdocs/LaRed/view/index.php",
-		"/E/xampp/htdocs/LaRed/view/profile.php",
-		"/E/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
-		"/E/xampp/htdocs/LaRed/resources/css/pruebas.css",
-		"/F/Dropbox/DAW/DWEC/Exposicion HTML5 APIs/apis html5/forms.html",
-		"/E/xampp/htdocs/LaRed/view/login.php",
-		"/E/xampp/htdocs/LaRed/resources/js/calendario.js",
-		"/F/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/JuegoAdivinaPalabras.html",
-		"/G/apagarVLC.bat",
-		"/E/xampp/htdocs/LaRed/model/post.php",
+		"/C/xampp/htdocs/residentraver/lib/game/entities/player.js",
+		"/C/xampp/htdocs/LaRed/view/signin.php",
+		"/C/xampp/htdocs/LaRed/resources/js/calendario.js",
+		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/JuegoAdivinaPalabras.html",
+		"/C/xampp/htdocs/LaRed/view/index.php",
+		"/C/xampp/htdocs/LaRed/resources/css/pruebas.css",
+		"/C/xampp/htdocs/LaRed/model/post.php",
+		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/tipoEvento.html",
+		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/cambiaCampo.html",
+		"/C/xampp/htdocs/ajax/CDs/index.html",
+		"/C/xampp/htdocs/ajax/CDsJSON/index.html",
+		"/C/xampp/htdocs/LaRed/view/login.php",
+		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/presionTeclas.html",
+		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/eventoRaton.html",
+		"/C/xampp/htdocs/LaRed/view/imagen.php",
+		"/C/xampp/htdocs/LaRed/view/logout.php",
+		"/C/xampp/htdocs/LaRed/controller/controladorComentarios.php",
+		"/C/xampp/htdocs/LaRed/controller/controladorPosts.php",
+		"/C/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
+		"/C/xampp/htdocs/LaRed/controller/controlErrores.php",
+		"/C/xampp/htdocs/LaRed/model/comentario.php",
+		"/C/xampp/htdocs/LaRed/model/usuario.php",
+		"/C/xampp/htdocs/LaRed/view/user.php",
+		"/C/xampp/htdocs/LaRed/view/profile.php",
 		"/E/xampp/htdocs/LaRed/model/usuario.php",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/moviendoCreandoTexto.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/Ejercicio4DOM.html",
+		"/E/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
 		"/C/Users/aDr/Desktop/calendar.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/Ejercicio3DOM.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/EjercicioRepasoPPT.html",
@@ -607,11 +627,16 @@
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/pruebadom.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/ejemploDOM1.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/modificandoEstructuraDom.html",
+		"/E/xampp/htdocs/LaRed/model/post.php",
 		"/E/xampp/htdocs/LaRed/controller/controladorPosts.php",
+		"/E/xampp/htdocs/LaRed/view/index.php",
+		"/G/apagarVLC.bat",
 		"/E/xampp/htdocs/LaRed/controller/controlErrores.php",
 		"/E/xampp/htdocs/LaRed/view/imagen.php",
 		"/E/xampp/htdocs/LaRed/model/comentario.php",
 		"/E/xampp/htdocs/LaRed/view/user.php",
+		"/E/xampp/htdocs/LaRed/resources/css/pruebas.css",
+		"/E/xampp/htdocs/LaRed/view/profile.php",
 		"/E/xampp/htdocs/LaRed/model/upload.php",
 		"/E/xampp/htdocs/pomplo/subir.php",
 		"/E/xampp/htdocs/LaRed/model/accessDB.php",
@@ -628,7 +653,9 @@
 		"/C/Users/aDr/Desktop/ExamenDWES2da/UD9-Generacion_dinamica_de_paginas_web_interactivas/cesta_con_XAJAX/fcesta.php",
 		"/E/xampp/htdocs/LaRed/controller/acceso.php",
 		"/E/xampp/htdocs/LaRed/view/forbiden.php",
+		"/E/xampp/htdocs/LaRed/view/signin.php",
 		"/F/Development/Webs/backup 2simmovil/mysql2simmovil.sql",
+		"/E/xampp/htdocs/LaRed/view/login.php",
 		"/E/xampp/htdocs/LaRed/view/logout.php",
 		"/C/xampp/htdocs/ejercicio2/mostrar.php",
 		"/C/xampp/htdocs/ejercicio2/index.php",
@@ -643,13 +670,11 @@
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_con_xajax/fcesta.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_con_xajax/fcesta.js",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_con_xajax/cesta.php",
-		"/C/xampp/htdocs/LaRed/view/login.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_sin_xajax/login.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_sin_xajax/include/Producto.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_sin_xajax/include/DB.php",
 		"/C/Users/usuario/Desktop/Penya_Adrian/ejercicio2/index.php",
 		"/C/Users/usuario/Desktop/Penya_Adrian/ejercicio2/login.php",
-		"/C/xampp/htdocs/LaRed/model/post.php",
 		"/C/xampp/htdocs/LaRed/Pruebas de SQL",
 		"/C/xampp/htdocs/laravel/prueba/app/controllers/BaseController.php",
 		"/C/xampp/htdocs/laravel/prueba/app/controllers/HomeController.php",
@@ -658,14 +683,9 @@
 		"/C/Users/usuario/Dropbox/DAW/DIW/Tema 5/ejemploResize.html",
 		"/C/Users/usuario/Dropbox/DAW/DIW/Para adrian P6/css/styles.css",
 		"/C/Users/usuario/Dropbox/DAW/DIW/Para adrian P6/index.html",
-		"/C/xampp/htdocs/LaRed/view/index.php",
-		"/C/xampp/htdocs/LaRed/controller/controladorPosts.php",
-		"/C/xampp/htdocs/LaRed/model/usuario.php",
-		"/C/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
 		"/C/Users/usuario/Dropbox/DAW/lared.sql",
 		"/C/Users/usuario/Dropbox/DAW/DIW/Actividades/SVG/circulo.html",
 		"/C/Users/usuario/Desktop/Examen DIW Tema 3/reproductorVideo.html",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/JuegoAdivinaPalabras.html",
 		"/C/Users/usuario/Dropbox/DAW/DIW/Actividades/P2T3/Practica2T3Mare.html",
 		"/C/Users/usuario/Dropbox/DAW/DIW/Actividades/SVG/rectangulos.html",
 		"/C/Users/usuario/Desktop/ExamenT3/E6/b/reproductorVideoPersonalizado.html",
@@ -680,15 +700,10 @@
 		"/C/Users/usuario/Desktop/Google APIs/forms3.html",
 		"/C/xampp/htdocs/LaRed/logout.php",
 		"/C/xampp/htdocs/Unidad5/cesta_compra/logoff.php",
-		"/C/xampp/htdocs/LaRed/view/signin.php",
 		"/C/xampp/htdocs/LaRed - copia/controller/controladorUsuarios.php",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/presionTeclas.html",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/tipoEvento.html",
 		"/C/xampp/htdocs/Unidad5/cesta_compra/productos.php",
 		"/C/xampp/htdocs/LaRed/model/accessDB.php",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/eventoRaton.html",
 		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/modificandoEstructuraDom.html",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/cambiaCampo.html",
 		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/eventosRepaso.html",
 		"/C/xampp/htdocs/Unidad5/cesta_compra/login.php",
 		"/C/xampp/htdocs/LaRed/index.php",
@@ -704,18 +719,11 @@
 		"/C/xampp/htdocs/Unidad5/db_acceso.php",
 		"/C/xampp/htdocs/Unidad6/ejemploPersona.php",
 		"/C/xampp/htdocs/Unidad6/ejercicio6.php",
-		"/C/xampp/htdocs/PracticaUnidad8/servicio.php",
-		"/C/xampp/htdocs/PracticaUnidad8/server.php",
-		"/C/xampp/htdocs/PracticaUnidad8/cliente.php",
-		"/C/xampp/htdocs/proyecto/embla/app/models/User.php",
-		"/C/xampp/htdocs/PracticaUnidad8/producto.php",
-		"/C/xampp/htdocs/Unidad6/clone.php",
-		"/C/xampp/htdocs/LaRed/accessDb.php",
-		"/C/xampp/htdocs/Unidad5/cesta_compra/pagar.php"
+		"/C/xampp/htdocs/PracticaUnidad8/servicio.php"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -729,7 +737,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"var dia",
+			"Tesuario",
+			"data-id",
+			"event",
+			"pintacalendario",
+			"gusta",
 			"+",
 			"+=",
 			"info",
@@ -787,14 +799,88 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "resources/js/validacion.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 739,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								731,
+								731
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -830,7 +916,7 @@
 	"project": "lared.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -864,7 +950,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 219.0,
+	"side_bar_width": 310.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

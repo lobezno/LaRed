@@ -49,6 +49,7 @@ function verCita(dia){
 }
 
 function editarCita(dia){
+	//if(calendario) divContenedorCalendario.innerHTML = "";
 	var elemento = document.getElementById(dia);
 	var postit = document.getElementById('postit');
 	diaPostit = dia;

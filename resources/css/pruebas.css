@@ -10,7 +10,7 @@ section{
 }
 
 article{
-	width: 300px;
+	width: 40%;
 	border: 1px solid  black;
 }
 
@@ -29,7 +29,7 @@ article{
 	border: 3px red solid;
 	overflow: hidden;
 	font-size: 0.7em;
-	width: 40%;
+	width: 100%;
 	height: 100%;
 	float: right;
 	
