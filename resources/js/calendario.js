@@ -8,18 +8,7 @@
 	var diaNum = hoy.getDay();
 	var mesNum = hoy.getMonth();
 	var anoNum = hoy.getFullYear();
-
-function sigueme(e) {
-    var x = (document.layers || !document.all)? e.pageX : event.x+document.body.scrollLeft;
-    var y = (document.layers || !document.all)? e.pageY : event.y+document.body.scrollTop;
-    var x2 = x + 10;
-    var y2 = y + 10;
-    
-    document.getElementById('siguelo').style.left=x2+'px';
-    document.getElementById('siguelo').style.top=y2+'px';
-    
-    return true
-}
+	var diaPostit;
 
 function sumaMes(){
 	if (mesNum < 11) {
@@ -44,13 +33,51 @@ function restaMes(){
 }
 
 function verCita(dia){
-	//var elemento = document.getElementById(dia);
-	alert("Raton: " + );
+	var elemento = document.getElementById(dia);
+	var postit = document.getElementById('postit');
+	var dayStorage = localStorage.getItem(dia);
+	
+	if (dayStorage) {
+		//elemento.className = "diaConEvento";
+		postit.textContent = dayStorage;
+	}else{
+		postit.textContent = dia;
+	}
+
+	
+	postit.className = "postit_visible";
 }
 
 function editarCita(dia){
+	var elemento = document.getElementById(dia);
+	var postit = document.getElementById('postit');
+	diaPostit = dia;
+	var textoPostit =  document.createElement('input');
+	textoPostit.setAttribute('type','text');
+	textoPostit.setAttribute('id','textoPostit');
+	postit.appendChild(textoPostit);
+	var botonPostit =  document.createElement('input');
+	botonPostit.setAttribute('type','button');
+	botonPostit.setAttribute('value','Guardar');
+	botonPostit.addEventListener('click',guardarPostit,false);
+	postit.appendChild(botonPostit);
+	postit.className = "postit_visible";
+	elemento.removeEventListener('mouseleave',oculta,false);
+}
+
+var oculta = function() {
 	//var elemento = document.getElementById(dia);
-	alert("editarCita: " + dia);
+	var postit = document.getElementById('postit');
+	postit.className = "postit_oculto";
+}
+
+var guardarPostit = function(){
+
+	var texto = document.getElementById('textoPostit').value;
+	console.log("Texto del postit: " + texto);
+	localStorage.setItem(diaPostit,texto);
+	document.getElementById('textoPostit').value = "";
+	oculta();
 }
 
 
@@ -107,7 +134,8 @@ var pinta = function(){
 				diaFormateado = contaDias + "-" + (dateAux.getMonth() + 1) + "-" + dateAux.getFullYear();
 			nodo.setAttribute('id',diaFormateado);
 			nodo.addEventListener('click',function(){ editarCita(this.getAttribute('id')) });
-			nodo.addEventListener('mouseover',function(){ verCita(this.getAttribute('id')) });
+			nodo.addEventListener('mouseenter',function(){ verCita(this.getAttribute('id')) });
+			nodo.addEventListener('mouseleave',oculta,false);
 
 			}
 

@@ -37,10 +37,15 @@
 		    <input type="submit" name="subir" value="Subir"/>
 		</form>
 	</section>
+
 	<section id="calendario">
+	<div class="postit_oculo" id="postit">
+		
+		</div>
 		<article id="contenedor_calendario">
 			
 		</article>
+		
 	</section>
 </body>
 </html>

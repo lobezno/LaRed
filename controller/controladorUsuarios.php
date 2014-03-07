@@ -34,7 +34,7 @@ class ControladorUsuarios{
 	}
 
 	function atri($post){
-		print("<p>Por <a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a> el " . $post['fecha'] . "</p>");
+		print("<p>Por <img class='avatar_mini' src='../view/imagen.php?id=" . $post['idusuario'] ."'/><a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a> el " . $post['fecha'] . "</p>");
 	}
 
 	function esAmigo($id,$idamigo){

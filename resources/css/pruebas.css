@@ -5,19 +5,20 @@ body{
 	border: solid black;
 }
 
-.post{
-	width: 300px;
-	border: 1px solid black;
+section{
+	border: 3px solid purple;
 }
 
-.postAmigo{
+article{
 	width: 300px;
 	border: 1px solid  black;
 }
 
 .avatar{
 	width: 50px;
-
+}
+.avatar_mini{
+	width: 25px;
 }
 
 .foto{
@@ -29,6 +30,8 @@ body{
 	overflow: hidden;
 	font-size: 0.7em;
 	width: 40%;
+	height: 100%;
+	float: right;
 	
 }
 
@@ -69,4 +72,31 @@ body{
 
 .botonera_calendario{
 	text-align: center;
+}
+
+
+#postit{
+	position: absolute;
+	overflow: hidden;
+}
+
+.postit_oculto{
+	display: none;
+}
+
+.postit_visible{
+	
+	width: 15%;
+	height: 50%;
+	background-color: #FDDC79;
+	border-color: #FCC418;
+}
+
+.diaConEvento{
+	background-color: #FDDC79;
+}
+
+#postit input[type='text']{
+	background-color: #FDDC79;
+	width: 100%;
 }
