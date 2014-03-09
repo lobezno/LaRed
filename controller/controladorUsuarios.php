@@ -21,7 +21,7 @@ class ControladorUsuarios{
 			header("Refresh: 3; url='../view/index.php'");
 
 		}else{
-			print("Mal :(");
+			print("Te faltan datos o tus datos no son correctos. Registro cancelado.");
 		}
 	}
 
@@ -66,6 +66,10 @@ class ControladorUsuarios{
 		$idusuario = $_POST['idusuario'];
 		Usuario::uploadImage($idusuario);
 	}
+
+	function borrarAmigo($miid, $idamigo){
+		Usuario::deleteFriend($miid,$idamigo);
+	}
 }
 	switch(@$_GET['action']){
 		case 'login': 
@@ -79,6 +83,9 @@ class ControladorUsuarios{
 			break;
 		case 'upload':
 			ControladorUsuarios::subirImagen();
+			break;
+		case 'deleteFriend':
+			ControladorUsuarios::borrarAmigo($_GET['miid'],$_GET['idamigo']);
 			break;
 	}
 

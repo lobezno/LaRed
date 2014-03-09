@@ -10,15 +10,13 @@ class ControladorPosts{
 		$datos = array("user" => $_POST['user'], "post" => $_POST['post'], "fecha" => $hoy);
 		$resultado = Post::insertarPost($datos);
 		if ($resultado) {
-			print("Post insertado :)");
-			header("Refresh: 2; url='../view/index.php'");
-			
+			header("Location: ../view/index.php");
 		}else{
 			print("Error insertando el post.");
 		}
 	}
 
-	function volcar($id){
+	function misPosts($id){
 		return Post::mostrarPosts($id);
 	}
 
@@ -56,6 +54,25 @@ class ControladorPosts{
 	function masVotados(){
 		return Post::topPost();
 	}
+
+	function borrarPost($idpost){
+		$resulatado = Post::delete($idpost);
+		if ($resulatado) {
+			print("Post borrado.");
+			header("Refresh: 2; url='../view/profile.php'");
+		}
+	}
+
+	function editarPost($idpost,$texto){
+		$resultado = Post::edit($idpost,$texto);
+		if ($resultado) {
+			print("Editado! ;)");
+			header("Refresh: 2; url='../view/profile.php'");
+		}else{
+			print("Error editando el post.");
+			header("Refresh: 2; url='../view/profile.php'");
+		}
+	}
 	
 }
 
@@ -65,6 +82,14 @@ class ControladorPosts{
 				break;
 			case 'like': 
 				ControladorPosts::meGusta(@$_GET['id'],@$_GET['idusuario']);
+				break;
+			case 'delete':
+				ControladorPosts::borrarPost(@$_GET['id']);
+				break;
+			case 'edit':
+				$idpost = $_POST['idpost'];
+				$texto = $_POST['texto'];
+				ControladorPosts::editarPost($idpost,$texto);
 				break;
 
 		}

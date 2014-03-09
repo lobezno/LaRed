@@ -34,13 +34,18 @@
 	    }
 
 	    public function insertarPost($datos){
-	    	$sql = "INSERT INTO posts(idusuario, post, fecha) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."')";
-	    	$consulta = self::ejecutaConsulta($sql);
-	    	if ($consulta) {
-	    		return true;
-	    	}else{
+	    	if ($datos['post'] == "" || $datos['post'] == null ) {
 	    		return false;
+	    	}else{
+	    		$sql = "INSERT INTO posts(idusuario, post, fecha) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."')";
+		    	$consulta = self::ejecutaConsulta($sql);
+		    	if ($consulta) {
+		    		return true;
+		    	}else{
+		    		return false;
+		    	}	
 	    	}
+	    	
 	    }
 
 	    public function mostrarPosts($idusuario){
@@ -117,6 +122,21 @@
 			}else{
 				return true;
 			}
+	    }
+
+	    public function delete($idpost){
+	    	$sql = "DELETE FROM posts WHERE idpost=" . $idpost;
+	    	$resultado = self::ejecutaConsulta($sql);
+	    	return true;
+	    }
+	    public function edit($idpost,$texto){
+	    	$sql = "UPDATE posts SET post='" . $texto . "' WHERE idpost=" . $idpost;
+	    	$resultado = self::ejecutaConsulta($sql);
+	    	if ($resultado) {
+	    		return true;
+	    	}else{
+	    		return false;
+	    	}
 	    }
 
 	}

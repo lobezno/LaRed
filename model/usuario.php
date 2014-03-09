@@ -57,13 +57,18 @@
 
 
 	    public function insertarUsuario($datos){
-	    	$sql = "INSERT INTO usuarios(usuario, password, nombre, email) VALUES ('" . $datos['user'] . "',md5('" . $datos['pass'] . "'),'" . $datos['nombre'] . "','" . $datos['mail'] . "')";
-	    	$consulta = self::ejecutaConsulta($sql);
-	    	if ($consulta) {
-	    		return true;
-	    	}else{
+	    	if ($datos['user'] == "" || $datos['pass'] == "" || $datos['nombre'] == "" || $datos['mail'] == "") {
 	    		return false;
+	    	}else{
+	    		$sql = "INSERT INTO usuarios(usuario, password, nombre, email) VALUES ('" . $datos['user'] . "',md5('" . $datos['pass'] . "'),'" . $datos['nombre'] . "','" . $datos['mail'] . "')";
+		    	$consulta = self::ejecutaConsulta($sql);
+		    	if ($consulta) {
+		    		return true;
+		    	}else{
+		    		return false;
+		    	}	
 	    	}
+	    	
 	    }
 
 	    public function getMyInfo($idusuario){
@@ -103,6 +108,22 @@
 	    	$rows = $consulta->fetchAll();
 	    	$resultado = (count($rows) > 0) ? true : false;
 	    	return $resultado;
+	    }
+
+	    public function deleteFriend($id,$idamigo){
+	    	try {  
+	    		$pdo =  new PDO ('mysql:host=localhost;dbname=lared','root','') or die("Error de conexion.");
+				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$pdo->beginTransaction();
+				$pdo->exec("DELETE FROM amigos WHERE idamigo1=" . $id . " AND idamigo2=" . $idamigo);
+				$pdo->exec("DELETE FROM amigos WHERE idamigo1=" . $idamigo . " AND idamigo2=" . $id);
+  				$pdo->commit();
+  				header("Location: ../view/profile.php");
+				  
+			}catch (Exception $e) {
+				  $pdo->rollBack();
+				  echo "Error en transaccion: " . $e->getMessage();
+			}
 	    }
 
 	    public function uploadImage($idusuario){

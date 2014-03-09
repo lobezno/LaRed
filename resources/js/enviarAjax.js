@@ -1,0 +1,41 @@
+//función creación del objeto XMLHttpRequest. 
+function creaObjetoAjax () { 
+	//Mayoría de navegadores
+     var xhr;
+     if (window.XMLHttpRequest) {
+        xhr=new XMLHttpRequest();
+        }
+     else { //para IE 5 y IE 6
+        xhr=new ActiveXObject(Microsoft.XMLHTTP);
+        }
+     return xhr;
+     }
+
+function recogeDatos() {
+    if (objetoAjax.readyState==4 && objetoAjax.status==200) {
+        miTexto=objetoAjax.responseText;
+        	document.write(miTexto);
+        }
+    }
+
+function enviar() {
+	console.log("Dentro de enviar");
+	//Recoger datos del formulario:
+	var idusuario= document.getElementById('user').value; //
+	console.log("idusuario: " + idusuario);
+	var texto=document.getElementById('post').value; //
+	
+	//datos para el envio por POST:
+	datosPost="user="+idusuario+"&post="+texto;
+	//Objeto XMLHttpRequest creado por la función.
+	objetoAjax=creaObjetoAjax();
+	//Preparar el envio  con Open
+	objetoAjax.open("POST","../controller/controladorPosts.php?action=send",true);
+	//Enviar cabeceras para que acepte POST:
+	objetoAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	objetoAjax.onreadystatechange=recogeDatos;
+	objetoAjax.send(datosPost); //pasar datos como parámetro
+	console.log("Salida de enviar: " + datosPost);
+   }
+
+

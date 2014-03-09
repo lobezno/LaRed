@@ -10,7 +10,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>LaRed - Usuario <?php echo $info['usuario']; ?> </title>
-	<link rel="stylesheet" href="../resources/css/pruebas.css">
+	<link rel="stylesheet" href="../resources/css/estructura.css">
 
 </head>
 <body>
