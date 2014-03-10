@@ -10,6 +10,7 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Perfil - <?php echo $user; ?></title>
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<link rel="stylesheet" href="../resources/css/calendario.css">
 	<script type="text/javascript" src="../resources/js/calendario.js"></script>
 </head>
 <body>
@@ -66,18 +67,13 @@
 			unset($amigo);
 		 ?>
 	</section>
-	<section>
-		
-	</section>
+
 
 	<section id="calendario">
 	<div class="postit_oculo" id="postit">
-		
 		</div>
 		<article id="contenedor_calendario">
-			
 		</article>
-		
 	</section>
 </body>
 </html>

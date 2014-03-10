@@ -5,10 +5,12 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Index</title>
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 	<script type="text/javascript" src="../resources/js/enviarAjax.js"></script>
+	<script type="text/javascript" src="../resources/js/meGusta.js"></script>
 </head>
 <body>
-	<header>
 		<?php 	
 				// Modulo para comprobar la autenticacion del usuario
 				include_once('../controller/acceso.php');
@@ -18,13 +20,17 @@
 				require_once('../controller/controladorPosts.php');
 					//	Usuario Autentificado
 					?>
+		<div id="menu">
 			<nav>
-				<ul>
-						<li><a href='#'><?php echo $user; ?></a></li>
-						<li><a href='../view/profile.php'>Perfil</a></li>
-						<li><a href='../view/logout.php'>Logout</a></li>
-				</ul>
+					<ul>
+							<li><a href='#'><?php echo $user; ?></a></li>
+							<li><a href='../view/profile.php'>Perfil</a></li>
+							<li><a href='../view/logout.php'>Logout</a></li>
+					</ul>
 			</nav>
+		</div>
+	<header id="cabecera">
+	Header - La Red
 	</header>
 
 	<div id="wrapper_total">
@@ -33,6 +39,7 @@
 					<form method="post">
 						<textarea cols="50" rows="5" name="post" id='post'></textarea>
 						<input type="hidden" id='user' name="user" value="<?php echo $idusuario; ?>">
+						<input type="file"  name="imagen" id="imagen">
 						<input type="button" value="Enviar post" onclick="enviar()" />
 					</form>
 				</article>	
@@ -45,8 +52,9 @@
 				if (count($registros) > 0) {
 				foreach ($registros as $registro){
 					print("<article class='post' id='" . $registro['idpost'] . "'>");
+					print("<header></header>");
 					print("<p>" . $registro['post'] . "</p>");
-					ControladorUsuarios::atri($registro);
+					print("<footer>" . ControladorUsuarios::atri($registro) . "</footer>");
 					print("</article>");
 				}
 				unset($registro);
@@ -82,13 +90,35 @@
 				$posts = ControladorPosts::actividadReciente();
 				if (count($posts) > 0){
 					foreach ($posts as $post) {
-						print("<article>");
-						print("<p>" . $post['post'] . "</p>");
-						print("<p>Likes: " . $post['likes'] . "</p>");
-						ControladorUsuarios::atri($post);
-						print("<span><a href='../controller/controladorPosts.php?action=like&id=" . $post['idpost'] . "&idusuario=" . $idusuario ."'>Me gusta!</a></span>");
-						print("</article>");
+					?>
+						<article class="post">
+							<header><?php echo $post['fecha']; ?></header>
+							<div id="post_contenido">
+								<div class="post_imagen">
+									<figure><img class="imagen_preview" src="../resources/images/background_tile7.jpg" alt=""></figure>
+								</div>
+								<div class="post_texto">
+									<div class="contenido_izquierda"><img src="../resources/images/comi.png" alt=""></div>
+									<div class="contenido_derecha"><img src="../resources/images/comi2.png" alt=""></div>
+									<div class="contenido_centro"><p><?php echo $post['post']; ?></p></div>	
+								</div>				
+							</div>
+							
+							<footer class="post_footer">
+								<div class="likes">
+									Likes: <?php echo $post['likes']; ?>
+									<button id="post<?php echo $post['idpost']; ?>" onclick='meGusta(<?php echo $idusuario; ?>,<?php echo $post['idpost']; ?>)'>Me Gusta</button>
+								</div>
+								<div class="atri">
+									<span>Por <a href="../view/user.php?id=<?php echo $post['idusuario'];?>"><?php echo $post['usuario'] ?></a><img class='avatar_mini' src="../view/imagen.php?id=<?php echo $post['idusuario']; ?>" /></span>
+								</div>
+							</footer>
+							
+							
+						</article>
+					<?php
 						}
+						unset($post);
 				}else{
 					print("<p>No hay actividad reciente. Esto est&acute; muerto</p>");
 				}

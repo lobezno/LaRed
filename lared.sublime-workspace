@@ -4,11 +4,51 @@
 		"selected_items":
 		[
 			[
-				"bak",
-				"background-color"
+				"pdd",
+				"padding-right"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"post",
+				"background-position"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"form",
+				"formData"
+			],
+			[
+				"datos",
+				"datosPost"
+			],
+			[
+				"fom",
+				"formData"
 			],
 			[
 				"ba",
+				"background"
+			],
+			[
+				"fonts",
+				"font-size"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"bak",
 				"background-color"
 			],
 			[
@@ -60,10 +100,6 @@
 				"textoPostit"
 			],
 			[
-				"post",
-				"postit"
-			],
-			[
 				"postt",
 				"postit_visible"
 			],
@@ -88,10 +124,6 @@
 				"mesNum"
 			],
 			[
-				"bor",
-				"border"
-			],
-			[
 				"dias",
 				"diasMes"
 			],
@@ -106,10 +138,6 @@
 			[
 				"ge",
 				"getDay"
-			],
-			[
-				"font",
-				"font-family"
 			],
 			[
 				"margin",
@@ -150,10 +178,6 @@
 			[
 				"pos",
 				"postsAmigos"
-			],
-			[
-				"border",
-				"border"
 			],
 			[
 				"paddin",
@@ -250,10 +274,6 @@
 			[
 				"head",
 				"header	Tag"
-			],
-			[
-				"fonts",
-				"font-style"
 			],
 			[
 				"fo",
@@ -400,10 +420,6 @@
 				"margin-top"
 			],
 			[
-				"bo",
-				"bottom"
-			],
-			[
 				"ta",
 				"table	Tag"
 			],
@@ -498,27 +514,27 @@
 			[
 				"rgba",
 				"rgba()"
-			],
-			[
-				"bord",
-				"border-width"
-			],
-			[
-				"color",
-				"color"
-			],
-			[
-				"he",
-				"height"
-			],
-			[
-				"wid",
-				"width"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "view/index.php",
+			"settings":
+			{
+				"buffer_size": 5480,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/css/estructura.css",
+			"settings":
+			{
+				"buffer_size": 2543,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -563,7 +579,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 328.0
+		"width": 464.0
 	},
 	"console":
 	{
@@ -584,23 +600,31 @@
 	},
 	"file_history":
 	[
-		"/F/Dropbox/DAW/DIW/Actividades/A2.7/basico.css",
-		"/F/Dropbox/DAW/DIW/Actividades/A2.7/index.html",
+		"/E/xampp/htdocs/LaRed/resources/js/meGusta.js",
+		"/E/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
+		"/E/xampp/htdocs/LaRed/controller/controladorPosts.php",
+		"/E/xampp/htdocs/LaRed/resources/js/enviarAjax.js",
+		"/E/xampp/htdocs/LaRed/resources/css/estructura.css",
 		"/E/xampp/htdocs/LaRed/view/index.php",
+		"/E/xampp/htdocs/arreat/insertar.php",
+		"/E/xampp/htdocs/LaRed/model/post.php",
+		"/F/Dropbox/DAW/DIW/Actividades/A2.7/basico.css",
+		"/E/xampp/htdocs/LaRed/model/usuario.php",
+		"/E/xampp/htdocs/LaRed/view/profile.php",
+		"/E/xampp/htdocs/LaRed/resources/css/calendario.css",
+		"/E/xampp/htdocs/LaRed/view/forbiden.php",
+		"/E/xampp/htdocs/LaRed/view/logout.php",
+		"/E/xampp/htdocs/LaRed/resources/js/calendario.js",
+		"/E/xampp/htdocs/LaRed/resources/css/pruebas.css",
+		"/G/Series/How I met your mother Season 9 FINAL/How.I.Met.Your.Mother.S09E18.720p.HDTV.x264-REMARKABLE.srt",
+		"/F/Dropbox/DAW/DIW/Actividades/A2.7/index.html",
 		"/E/xampp/htdocs/LaRed/view/user.php",
 		"/C/Users/aDr/Desktop/prueba.html",
 		"/E/xampp/htdocs/LaRed/view/login.php",
-		"/E/xampp/htdocs/LaRed/resources/css/estructura.css",
-		"/E/xampp/htdocs/LaRed/view/profile.php",
 		"/E/xampp/htdocs/LaRed/pruebas.txt",
-		"/E/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
 		"/C/Users/aDr/Desktop/Nuevo documento de texto.txt",
-		"/E/xampp/htdocs/LaRed/controller/controladorPosts.php",
 		"/E/xampp/htdocs/LaRed/resources/js/noscript.js",
 		"/E/xampp/htdocs/LaRed/resources/js/validaLogin.js",
-		"/E/xampp/htdocs/LaRed/resources/js/enviarAjax.js",
-		"/E/xampp/htdocs/LaRed/model/post.php",
-		"/E/xampp/htdocs/LaRed/model/usuario.php",
 		"/E/xampp/htdocs/ajax/ComentariosEnDocumento/comentarios.html",
 		"/E/xampp/htdocs/ajax/ComentariosEnDocumento/pagina1.php",
 		"/E/xampp/htdocs/ajax/ComentariosEnDocumento/index.html",
@@ -609,9 +633,7 @@
 		"/E/xampp/htdocs/LaRed/view/validandoPrueba.html",
 		"/E/xampp/htdocs/LaRed/view/signin.php",
 		"/E/xampp/htdocs/LaRed/resources/js/validacion.js",
-		"/E/xampp/htdocs/LaRed/resources/css/pruebas.css",
 		"/F/Dropbox/DAW/DWEC/Exposicion HTML5 APIs/apis html5/forms.html",
-		"/E/xampp/htdocs/LaRed/resources/js/calendario.js",
 		"/F/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/JuegoAdivinaPalabras.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/moviendoCreandoTexto.html",
 		"/F/Dropbox/DAW/DWEC/Unidad 6 - Dom/Ejercicios/Ejercicio4DOM.html",
@@ -640,9 +662,7 @@
 		"/C/Users/aDr/Desktop/ExamenDWES2da/UD9-Generacion_dinamica_de_paginas_web_interactivas/cesta_con_XAJAX/cesta.php",
 		"/C/Users/aDr/Desktop/ExamenDWES2da/UD9-Generacion_dinamica_de_paginas_web_interactivas/cesta_con_XAJAX/fcesta.php",
 		"/E/xampp/htdocs/LaRed/controller/acceso.php",
-		"/E/xampp/htdocs/LaRed/view/forbiden.php",
 		"/F/Development/Webs/backup 2simmovil/mysql2simmovil.sql",
-		"/E/xampp/htdocs/LaRed/view/logout.php",
 		"/C/xampp/htdocs/ejercicio2/mostrar.php",
 		"/C/xampp/htdocs/ejercicio2/index.php",
 		"/C/Users/usuario/Desktop/ExamenDWES2da/ud9-generacion_dinamica_de_paginas_web_interactivas/cesta_con_xajax/productos.php",
@@ -707,19 +727,15 @@
 		"/C/xampp/htdocs/LaRed/index.php",
 		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/eventoRaton",
 		"/C/xampp/htdocs/ajax/ComentariosEnDocumento/index.html",
-		"/C/xampp/htdocs/LaRed/controlador/controladorUsuarios.php",
-		"/C/xampp/htdocs/LaRed/vista/login.php",
-		"/C/xampp/htdocs/LaRed/modelo/usuario.php",
-		"/C/xampp/htdocs/ajax/ComentariosEnDocumento/comentarios.html",
-		"/C/xampp/htdocs/LaRed/vista/index.php"
+		"/C/xampp/htdocs/LaRed/controlador/controladorUsuarios.php"
 	],
 	"find":
 	{
-		"height": 28.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 96.0,
 		"where_history":
 		[
 		]
@@ -729,6 +745,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"class=\"post\"",
 			"var dia",
 			"+",
 			"+=",
@@ -787,8 +804,155 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "view/index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5480,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3124,
+								3124
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1650.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/css/estructura.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2543,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2071,
+								2071
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2741.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

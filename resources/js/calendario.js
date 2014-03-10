@@ -36,7 +36,6 @@ function verCita(dia){
 	var elemento = document.getElementById(dia);
 	var postit = document.getElementById('postit');
 	var dayStorage = localStorage.getItem(dia);
-	
 	if (dayStorage) {
 		//elemento.className = "diaConEvento";
 		postit.textContent = dayStorage;

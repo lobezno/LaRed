@@ -1,0 +1,76 @@
+#calendario{
+	border: 3px red solid;
+	overflow: hidden;
+	font-size: 0.7em;
+	width: 50%;
+	height: 100%;
+	margin:0 auto;
+	
+}
+
+.caja_calendario{
+	display: inline-block;
+	width: 12%;
+	height: 10%;
+	margin: 3px;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 3
+
+	
+}
+
+.caja_calendario_hidden{
+	display: inline-block;
+	width: 12%;
+	height: 10%;
+	margin: 4px;
+	padding: 0;
+	display: hidden;
+}
+
+.caja_calendario_headers{
+	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+	width: 12%;
+	height: 10%;
+	margin: 3px;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 3
+
+	
+}
+
+.botonera_calendario{
+	text-align: center;
+}
+
+
+#postit{
+	position: absolute;
+	overflow: hidden;
+	color: red;
+}
+
+.postit_oculto{
+	display: none;
+}
+
+.postit_visible{
+	
+	width: 15%;
+	height: 50%;
+	background-color: #FDDC79;
+	border-color: #FCC418;
+}
+
+.diaConEvento{
+	background-color: #FDDC79;
+}
+
+#postit input[type='text']{
+	background-color: #FDDC79;
+	width: 100%;
+}

@@ -7,13 +7,30 @@ class ControladorPosts{
 
 	function enviar(){
 		$hoy = date("Y-m-d");
-		$datos = array("user" => $_POST['user'], "post" => $_POST['post'], "fecha" => $hoy);
+		$imagen_temporal  = $_FILES['pic']; 
+		var_dump($imagen_temporal);
+
+/*
+		//este es el archivo temporal
+        $imagen_temporal  = $_FILES['imagen']['tmp_name'];  
+        //este es el tipo de archivo
+        $tipo = $_FILES['imagen']['type'];
+        //leer el archivo temporal en binario
+        $fp     = fopen($imagen_temporal, 'r+b');
+        $data = fread($fp, filesize($imagen_temporal));
+        
+        fclose($fp);
+        //escapar los caracteres
+        $data = mysql_escape_string($data);
+
+		$datos = array("user" => $_POST['user'], "post" => $_POST['post'], "fecha" => $hoy, "pic" => $data);
+		/*
 		$resultado = Post::insertarPost($datos);
 		if ($resultado) {
 			header("Location: ../view/index.php");
 		}else{
 			print("Error insertando el post.");
-		}
+		}*/
 	}
 
 	function misPosts($id){
@@ -37,8 +54,7 @@ class ControladorPosts{
 		}else{
 			$resultado = Post::like($idpost,$idusuario);
 			if ($resultado) {
-				print("Te gusta :)");
-				header("Refresh: 2; url='../view/index.php'");
+				header("Location: ../view/index.php");
 			}else{
 				print("Error.");
 				header("Refresh: 2; url='../view/index.php'");
@@ -81,7 +97,7 @@ class ControladorPosts{
 				ControladorPosts::enviar();
 				break;
 			case 'like': 
-				ControladorPosts::meGusta(@$_GET['id'],@$_GET['idusuario']);
+				ControladorPosts::meGusta(@$_POST['id'],@$_POST['idusuario']);
 				break;
 			case 'delete':
 				ControladorPosts::borrarPost(@$_GET['id']);

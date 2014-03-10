@@ -34,10 +34,11 @@
 	    }
 
 	    public function insertarPost($datos){
+
 	    	if ($datos['post'] == "" || $datos['post'] == null ) {
 	    		return false;
 	    	}else{
-	    		$sql = "INSERT INTO posts(idusuario, post, fecha) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."')";
+	    		$sql = "INSERT INTO posts(idusuario, post, fecha, pic) VALUES (" . $datos['user'] . ",'" . $datos['post'] . "','" . $datos['fecha'] ."'," . $datos['pic'] . ")";
 		    	$consulta = self::ejecutaConsulta($sql);
 		    	if ($consulta) {
 		    		return true;

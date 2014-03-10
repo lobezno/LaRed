@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>LaRed - Acceso Denegado</title>
+	<link rel="stylesheet" href="../resources/css/estructura.css">
 </head>
 <body>
 	<?php 
