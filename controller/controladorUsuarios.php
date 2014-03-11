@@ -72,11 +72,12 @@ class ControladorUsuarios{
 	}
 
 	function buscarUsuario($texto){
+		
 		$resultado = Usuario::searchUser($texto);
 		if (!$resultado) {
-			return "No hay usuarios con ese nombre :(";
+			print("No hay usuarios con ese nombre :(");
 		}else{
-			return $resultado;
+			print($resultado[0]['usuario']);
 		}
 	}
 }

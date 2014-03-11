@@ -6,9 +6,10 @@ class ControladorPosts{
 
 
 	function enviar(){
+
 		$hoy = date("Y-m-d");
-		$imagen_temporal  = $_FILES['pic']; 
-		var_dump($imagen_temporal);
+		//$imagen_temporal  = $_FILES['imagen']; 
+		//var_dump($imagen_temporal);
 
 /*
 		//este es el archivo temporal

@@ -9,15 +9,19 @@ function creaObjetoAjax () {
      return xhr;
      }
 
-function recogeDatos() {
+function devuelveBusqueda() {
     if (objetoAjax.readyState==4 && objetoAjax.status==200) {
-        miTexto=objetoAjax.responseText;
-        	alert(miTexto);
+        var respuesta = objetoAjax.responseText;
+        var dataList = document.getElementById('buscaUsuarios');
+        var nodo = document.createElement('option');
+        nodo.setAttribute('value',respuesta);
+        dataList.appendChild(nodo);
+        	console.log('debug|respuesta del ajax de devuelveBusqueda: ' + respuesta);
         }
     }
 
 var buscar = function(){
-  
+    
     datosPost="texto="+entrada.value;
     //Objeto XMLHttpRequest creado por la función.
     objetoAjax=creaObjetoAjax();
@@ -25,7 +29,7 @@ var buscar = function(){
     objetoAjax.open("POST","../controller/controladorUsuarios.php?action=search",true);
     objetoAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     objetoAjax.setRequestHeader("Cache-Control", "no-cache");
-    objetoAjax.onreadystatechange=recogeDatos;
+    objetoAjax.onreadystatechange=devuelveBusqueda;
     objetoAjax.send(datosPost); 
 }
 

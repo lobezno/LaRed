@@ -102,7 +102,7 @@ nav ul li{
 #wrapper_panel{
 	width: 100%;
 	margin: 1% auto 0 auto;
-	height: 160px;
+	height: 300px;
 
 }
 
@@ -111,6 +111,7 @@ nav ul li{
 	width: 20%;
 	float: left;
 	padding: 1%;
+
 	margin: 0 1%;
 	margin-right: 0;
 
@@ -122,21 +123,19 @@ nav ul li{
 	margin: 0 1%;
 	padding: 1%;
 	float: right;
+
 	margin-left: 0;
 
 }
 .panel_middle{
 	overflow: hidden;
 	width: 50%;
-	height: 100%;
+	padding: 1%;
 	margin: 0 auto;
 
 }
 
-#insertarPost{
-	padding: 0;
-	margin: 0 auto;
-}
+
 
 #insertarPost > article{
 	border: none;
@@ -292,15 +291,16 @@ footer .atri{
 
 #insertarPost > article > form > div:nth-child(2){
 	width: auto !important;
-	border: none !important;
+
 }
 
 
 
 #insertarPost > article > form > div:nth-child(1) > div{
-	border: none !important;
+	border: solid red !important;
 	width: 99% !important;
-	margin: 0 auto !important;
+
+
 	background-color: rgba(0,0,0,0) !important;
 
 }

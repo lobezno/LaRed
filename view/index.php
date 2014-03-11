@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	
 	<title>LaRed - Index</title>
 	<!--css -->
 	<link rel="stylesheet" href="../resources/css/estructura.css">
@@ -44,9 +44,8 @@
 				<section class="panel_left">
 					<h3>Busca Gente</h3>
 
-					<input id="entrada" list="browsers" placeholder='Introduce el nombre de usuario  a buscar' autocomplete="off"/>
-					<datalist id="browsers">
-					  <option value="Chrome">
+					<input id="entrada" list="buscaUsuarios" placeholder='Introduce el nombre de usuario  a buscar' autocomplete="off"/>
+					<datalist id="buscaUsuarios">					
 					</datalist>
 					<input type="button" value="Buscar" onclick="buscar()" onchange="buscar()">
 				</section>
@@ -69,6 +68,7 @@
 					 </ul>
 				</section>
 				<section id="insertarPost" class="panel_middle">
+					<h3>Insertar Comentario</h3>
 					<article>
 						<form method="post">
 							<textarea cols="50" rows="5" name="post" id='post'></textarea>

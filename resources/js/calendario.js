@@ -60,8 +60,8 @@ function editarCita(dia){
 	botonPostit.setAttribute('type','button');
 	botonPostit.setAttribute('value','Guardar');
 	botonPostit.addEventListener('click',guardarPostit,false);
-	postit.appendChild(botonPostit);
-	postit.className = "postit_visible";
+	postit.appendChild(botonPostit)
+;	postit.className = "postit_visible";
 	elemento.removeEventListener('mouseleave',oculta,false);
 }
 
