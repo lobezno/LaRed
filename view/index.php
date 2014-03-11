@@ -3,12 +3,18 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
 	<title>LaRed - Index</title>
+	<!--css -->
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<link rel="stylesheet" href="../resources/css/responsive.css">
+
+	<!--Js -->
 	<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
 	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 	<script type="text/javascript" src="../resources/js/enviarAjax.js"></script>
 	<script type="text/javascript" src="../resources/js/meGusta.js"></script>
+	<script type="text/javascript" src="../resources/js/buscador.js"></script>
 </head>
 <body>
 		<?php 	
@@ -34,16 +40,46 @@
 	</header>
 
 	<div id="wrapper_total">
-			<section id="insertarPost">
-				<article>
-					<form method="post">
-						<textarea cols="50" rows="5" name="post" id='post'></textarea>
-						<input type="hidden" id='user' name="user" value="<?php echo $idusuario; ?>">
-						<input type="file"  name="imagen" id="imagen">
-						<input type="button" value="Enviar post" onclick="enviar()" />
-					</form>
-				</article>	
-			</section>
+			<div id="wrapper_panel">
+				<section class="panel_left">
+					<h3>Busca Gente</h3>
+
+					<input id="entrada" list="browsers" placeholder='Introduce el nombre de usuario  a buscar' autocomplete="off"/>
+					<datalist id="browsers">
+					  <option value="Chrome">
+					</datalist>
+					<input type="button" value="Buscar" onclick="buscar()" onchange="buscar()">
+				</section>
+				<section class="panel_right">
+					<h3>Mis Amigos</h3>
+					<ul>
+					<?php 
+					$amigos = ControladorUsuarios::misAmigos($idusuario);
+					if (count($amigos) > 0) {
+						foreach ($amigos as $amigo) {
+					
+							print("<li><a href='../view/user.php?id=" . $amigo['idusuario'] . "'>" . $amigo['usuario'] ."</a></li>");
+					
+						}	
+						unset($amigo);
+					}else{
+						print("<p>No tienes  amigos :(((</p>");
+					}
+					 ?>
+					 </ul>
+				</section>
+				<section id="insertarPost" class="panel_middle">
+					<article>
+						<form method="post">
+							<textarea cols="50" rows="5" name="post" id='post'></textarea>
+							<input type="hidden" id='user' name="user" value="<?php echo $idusuario; ?>">
+							<input type="file"  name="imagen" id="imagen">
+							<input type="button" value="Enviar post" onclick="enviar()" />
+						</form>
+					</article>	
+				</section>
+			</div>
+
 			<div class="wrapper_left">
 				<section id="misPost">
 					<h3>Mis posts</h3>
@@ -84,7 +120,7 @@
 				</section>	
 			</div>
 			<div class="wrapper_right">
-				<section id="actividadReciente" class="derecha">
+				<section id="actividadReciente" class="float_derecha">
 					<h3>Actividad Reciente</h3>
 			<?php 
 				$posts = ControladorPosts::actividadReciente();
@@ -126,7 +162,7 @@
 
 
 				</section>
-				<section class="derecha" id="mejoresPosts">
+				<section class="float_derecha" id="mejoresPosts">
 					<h3>Mejores Posts</h3>
 			<?php 
 				$topPosts = ControladorPosts::masVotados();
@@ -147,28 +183,8 @@
 				</section>
 			</div>
 	</div>
-			<section>
-				<h3>Mis Amigos</h3>
-				<?php 
-				$amigos = ControladorUsuarios::misAmigos($idusuario);
-				if (count($amigos) > 0) {
-					foreach ($amigos as $amigo) {
-						print("<article>");
-						print("<p><a href='../view/user.php?id=" . $amigo['idusuario'] . "'>" . $amigo['usuario'] ."</a></p>");
-						print("</article>");
-					}	
-					unset($amigo);
-				}else{
-					print("<p>No tienes  amigos :(((</p>");
-				}
-				 ?>
-			</section>
-			<section>
-				<h3>Busca Gente</h3>
-				<form>
-					<input type="text" placeholder='Introduce el nombre de usuario  a buscar'>
-					<input type="button" value="Buscar">
-				</form>
-			</section>
+	<footer>
+		Footer de LaRed
+	</footer>
 </body>
 </html>

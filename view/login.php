@@ -27,10 +27,10 @@
                     <fieldset>
                         <legend>Acceder sin JavaScript bajo riesgo de no ver el contenido correctamente</legend>
                         <label>Usuario</label>
-                        <input type="text" name="user" id="user" placeholder='Usuario'>
+                        <input type="text" name="user2" id="user2" placeholder='Usuario'>
                         <label>Password</label>
-                        <input type="password" name="pass" id="pass" placeholder='Contraseña'>
-                        <input type="submit" value="Log in" name="enviar" id="enviar">
+                        <input type="password" name="pass2" id="pass2" placeholder='Contraseña'>
+                        <input type="submit" value="Log in" name="enviar2" id="enviar2">
                     </fieldset>
                 </form>
             </article>
@@ -40,9 +40,9 @@
     	<form method="post" >
     		<fieldset>
     			<label>Usuario</label>
-    			<input type="text" name="user" id="user" placeholder='Usuario'>
+    			<input type="text" name="user" id="user" placeholder='Usuario' autocomplete="off" required>
     			<label>Password</label>
-    			<input type="password" name="pass" id="pass" placeholder='Contraseña'>
+    			<input type="password" name="pass" id="pass" placeholder='Contraseña' required>
     			<input type="button" value="Log in" name="enviar" id="enviar" onclick="validarLogin()">
     		</fieldset>
     	</form>

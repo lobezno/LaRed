@@ -70,6 +70,15 @@ class ControladorUsuarios{
 	function borrarAmigo($miid, $idamigo){
 		Usuario::deleteFriend($miid,$idamigo);
 	}
+
+	function buscarUsuario($texto){
+		$resultado = Usuario::searchUser($texto);
+		if (!$resultado) {
+			return "No hay usuarios con ese nombre :(";
+		}else{
+			return $resultado;
+		}
+	}
 }
 	switch(@$_GET['action']){
 		case 'login': 
@@ -86,6 +95,9 @@ class ControladorUsuarios{
 			break;
 		case 'deleteFriend':
 			ControladorUsuarios::borrarAmigo($_GET['miid'],$_GET['idamigo']);
+			break;
+		case 'search':
+			ControladorUsuarios::buscarUsuario($_POST['texto']);
 			break;
 	}
 

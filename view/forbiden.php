@@ -6,10 +6,12 @@
 	<link rel="stylesheet" href="../resources/css/estructura.css">
 </head>
 <body>
-	<?php 
-		include_once("../controller/controlErrores.php");
-		print($mensaje);
-	 ?>
-	<p class='error'>Puedes <a href='../view/login.php'>logearte</a> o <a href='../view/signin.php'>registrarte</a><p>
+	<section>
+		<?php 
+			include_once("../controller/controlErrores.php");
+			print($mensaje);
+		 ?>
+		<p class='error'>Puedes <a href='../view/login.php'>logearte</a> o <a href='../view/signin.php'>registrarte</a><p>
+	</section>
 </body>
 </html>

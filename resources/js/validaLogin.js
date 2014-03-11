@@ -10,16 +10,26 @@ function creaObjetoAjax () {
      return xhr;
      }
 
-function validarLogin(){
 
+
+function validarLogin(){
+	var user = document.getElementById('user');
+	if (user.value == "") {
+		console.log("Te falta el usuario!");
+		user.setCustomValidity("Te falta el usuario!");
+	} else {
+		console.log("");
+		user.setCustomValidity("");
+	}
+	login();
+/*
 	if (user.value == "" || user == null) {
 		console.log("Te falta el user");
 	}else if (pass.value == "" || pass == null) {
 			console.log("Te falta la pass");
 	}else{
-		console.log("TODO OK :)");
 		login();
-	}
+	}*/
 
 }
 

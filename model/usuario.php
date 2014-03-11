@@ -126,6 +126,14 @@
 			}
 	    }
 
+	    public function searchUser($texto){
+	    	$sql = "SELECT usuario from usuarios WHERE usuario='" . $texto . "'";
+	    	$consulta = self::ejecutaConsulta($sql);
+	    	$rows = $consulta->fetchAll();
+	    	$resultado = (count($rows) > 0) ? $rows : false;
+	    	return $resultado;
+	    }
+
 	    public function uploadImage($idusuario){
 	    	//comprobamos si ha ocurrido un error.
 			if ( ! isset($_FILES["imagen"]) || $_FILES["imagen"]["error"] > 0){

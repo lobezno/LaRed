@@ -7,21 +7,36 @@ var validarFormulario = function(){
 	var cajaMail = document.getElementById('mail');
 
 	if (!cajaUsuario.value) {
-		console.log("dentro");
 		cajaUsuario.setCustomValidity("Te falta el usuario!");
 	} else {
-		cajaUsuario.setCustomValidity(null);
+		cajaUsuario.setCustomValidity("");
 	}
-	if (cajaNombre.validity.valueMissing) {
-		cajaNombre.setCustomValidity("Te falta el nombre!");
+
+	if (!cajaPass.value) {
+		cajaPass.setCustomValidity("Te falta la contraseña!");
+	}else{
+		cajaPass.setCustomValidity("");
 	}
-	if (cajaMail.validity.valueMissing) {
-		cajaMail.setCustomValidity("Te falta el mail!");
-	}
+
+
 	if (cajaPass.value != cajaPassb.value) {
 		cajaPassb.setCustomValidity("Las contraseñas no coinciden!!");
-	};
+	}else{
+		cajaPassb.setCustomValidity("");
+	}
 
+	if (!cajaNombre.value) {
+		cajaNombre.setCustomValidity("Te falta el nombre!");
+	}else{
+		cajaNombre.setCustomValidity("");
+	}
+
+
+	if (!cajaMail.value) {
+		cajaMail.setCustomValidity("Te falta el e-mail!");
+	}else{
+		cajaMail.setCustomValidity("");
+	}
 	
 	
 }
