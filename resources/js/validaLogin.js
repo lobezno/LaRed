@@ -22,14 +22,7 @@ function validarLogin(){
 		user.setCustomValidity("");
 	}
 	login();
-/*
-	if (user.value == "" || user == null) {
-		console.log("Te falta el user");
-	}else if (pass.value == "" || pass == null) {
-			console.log("Te falta la pass");
-	}else{
-		login();
-	}*/
+
 
 }
 

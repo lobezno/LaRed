@@ -1,10 +1,10 @@
 #calendario{
-	border: 3px red solid;
 	overflow: hidden;
 	font-size: 0.7em;
 	width: 50%;
 	height: 100%;
 	margin:0 auto;
+	float: right;
 	
 }
 

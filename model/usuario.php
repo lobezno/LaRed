@@ -127,7 +127,7 @@
 	    }
 
 	    public function searchUser($texto){
-	    	$sql = "SELECT usuario from usuarios WHERE usuario='" . $texto . "'";
+	    	$sql = "SELECT usuario from usuarios WHERE usuario LIKE  '" . $texto . "%'";
 	    	$consulta = self::ejecutaConsulta($sql);
 	    	$rows = $consulta->fetchAll();
 	    	$resultado = (count($rows) > 0) ? $rows : false;

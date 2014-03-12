@@ -29,28 +29,46 @@
 	</header>
 
 	<div id="wrapper_total">
-		<section>
-			<h1>Perfil</h1>
-		<?php 
-				echo "Usuario: " . $user . "<br />Idusuario: " . $idusuario;
-				print("<p>//////  PRUEBAS ////////////</p>");
-				$informacion = ControladorUsuarios::miInfo($idusuario);
-				print("<p>Usuario:" . $informacion['usuario'] . "</p>");
-				print("<p>Email: " . $informacion['email'] . "</p>");
-				print("<p>Nombre: " . $informacion['nombre'] . "</p>");
-				print("<figure>");
-				print("<img id='avatar' class='avatar' src='../view/imagen.php?id=" . $idusuario . "' />");
-				print("<form action='../controller/controladorUsuarios.php?action=upload' method='post' enctype='multipart/form-data'>");
-			    print("<label for='imagen'>Imagen:</label>");
-			    print("<input type='file' name='imagen' id='imagen' />");
-			    print("<input type='hidden' name='idusuario' id='idusuario' value=" . $idusuario . ">");
-			    print("<input type='submit' name='subir' value='Subir'/>");
-				print("</form>");
-				print("</figure>");
-
-		?>
+		<section class="perfil">
+			<h3>Perfil</h3>
+			<section id="calendario">
+		<div class="postit_oculo" id="postit">
+			</div>
+			<article id="contenedor_calendario">
+			</article>
 		</section>
-		<section>
+		<?php 
+				$informacion = ControladorUsuarios::miInfo($idusuario);
+		?>
+			<div id="info">
+				<div class="info_datos">
+					<label for="user">IDUsuario</label>
+					<input type="text" class="buscador_texto" value="<?php echo $idusuario; ?>" disabled>
+				</div>
+				<div class="info_datos">
+					<label for="user">Usuario</label>
+					<input type="text" class="buscador_texto" value="<?php echo $informacion['usuario']; ?>" disabled>
+				</div>
+				<div class="info_datos">
+					<label for="mail">Email</label>
+					<input type="mail" class="buscador_texto" value="<?php echo $informacion['email']; ?>" disabled>
+				</div>
+				<div class="info_datos">
+					<label for="nombre">Nombre</label>
+					<input type="text" class="buscador_texto" value="<?php echo $informacion['nombre']; ?>" disabled>
+				</div>
+				<figure>
+					<img id='avatar' class='avatar' src='../view/imagen.php?id=<?php echo $idusuario; ?>' />
+				</figure>
+				<form action='../controller/controladorUsuarios.php?action=upload' method='post' enctype='multipart/form-data'>
+				<input type='file'  class='boton' name='imagen' id='imagen' />
+			    <input type='hidden' name='idusuario' id='idusuario' value="<?php echo $idusuario; ?>">
+			    <input type='submit' name='subir' class='boton' value='Subir'/>
+				</form>
+			</div>
+
+		</section>
+		<section class="admin_posts">
 			<h3>Administracion de posts</h3>
 			<?php 
 				$posts = ControladorPosts::misPosts($idusuario);
@@ -58,7 +76,7 @@
 					print("<article class='post' id='" . $post['idpost'] . "'>");
 						print("<form action='../controller/controladorPosts.php?action=edit' method='post'>");
 							print("<input type='hidden' value='" . $post['idpost'] . "' name='idpost'/>");
-							print("<input type='text' value='" . $post['post'] . "' name='texto'/>");
+							print("<input class='edita_texto' type='text' value='" . $post['post'] . "' name='texto'/>");
 							print("<input type='image' src='../resources/images/edit.gif' >");
 							print("<a href='../controller/controladorPosts.php?action=delete&id=" . $post['idpost'] . "'><img src='../resources/images/delete.gif'></a>");
 						print("</form>");
@@ -67,7 +85,7 @@
 				unset($post);
 			 ?>
 		</section>
-		<section>
+		<section  class="admin_amigos">
 			<h3>Administracion de amigos</h3>
 			<?php 
 				$amigos = ControladorUsuarios::misAmigos($idusuario);
@@ -81,12 +99,7 @@
 		</section>
 
 
-		<section id="calendario">
-		<div class="postit_oculo" id="postit">
-			</div>
-			<article id="contenedor_calendario">
-			</article>
-		</section>
+		
 	</div>
 </body>
 </html>

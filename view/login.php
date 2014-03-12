@@ -9,7 +9,7 @@
 </head>
 <body>
     <noscript>
-         <section>
+         <section id="login">
             <h1>Tu navegador no tiene JavaScript habilitado :(</h1>
             <article class="deshabilitado">
                 <img src="images/error.png" alt="Javascript deshabilitado" />
@@ -30,7 +30,7 @@
                         <input type="text" name="user2" id="user2" placeholder='Usuario'>
                         <label>Password</label>
                         <input type="password" name="pass2" id="pass2" placeholder='Contraseña'>
-                        <input type="submit" value="Log in" name="enviar2" id="enviar2">
+                        <input type="submit" value="Log in" name="enviar2" id="enviar2" class="boton">
                     </fieldset>
                 </form>
             </article>
@@ -43,7 +43,7 @@
     			<input type="text" name="user" id="user" placeholder='Usuario' autocomplete="off" required>
     			<label>Password</label>
     			<input type="password" name="pass" id="pass" placeholder='Contraseña' required>
-    			<input type="button" value="Log in" name="enviar" id="enviar" onclick="validarLogin()">
+    			<input type="button" value="Log in" name="enviar" id="enviar" onclick="validarLogin()" class="boton">
     		</fieldset>
     	</form>
     </section>

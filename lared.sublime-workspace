@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"fon",
+				"font"
+			],
+			[
 				"margin",
 				"margin-bottom"
 			],
@@ -122,10 +130,6 @@
 			[
 				"b",
 				"bold"
-			],
-			[
-				"fon",
-				"font-weight"
 			],
 			[
 				"num",
@@ -456,10 +460,6 @@
 				"right"
 			],
 			[
-				"font-s",
-				"font-style"
-			],
-			[
 				"tota",
 				"totalB"
 			],
@@ -519,14 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "view/forbiden.php",
-			"settings":
-			{
-				"buffer_size": 426,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -592,12 +584,17 @@
 	},
 	"file_history":
 	[
+		"/C/Users/aDr/Desktop/auxiliar.txt",
 		"/E/xampp/htdocs/LaRed/view/index.php",
-		"/E/xampp/htdocs/LaRed/view/login.php",
 		"/E/xampp/htdocs/LaRed/resources/css/estructura.css",
+		"/E/xampp/htdocs/LaRed/model/accessDB.php",
+		"/E/xampp/htdocs/LaRed/model/usuario.php",
+		"/G/Descargas/lared.sql",
+		"/E/xampp/htdocs/LaRed/view/post.php",
+		"/E/xampp/htdocs/LaRed/view/forbiden.php",
+		"/E/xampp/htdocs/LaRed/view/login.php",
 		"/E/xampp/htdocs/LaRed/resources/css/responsive.css",
 		"/E/xampp/htdocs/LaRed/resources/js/buscador.js",
-		"/E/xampp/htdocs/LaRed/model/usuario.php",
 		"/E/xampp/htdocs/LaRed/controller/controladorUsuarios.php",
 		"/C/Users/aDr/Desktop/style.css",
 		"/E/xampp/htdocs/LaRed/resources/js/meGusta.js",
@@ -618,7 +615,6 @@
 		"/E/xampp/htdocs/LaRed/model/post.php",
 		"/F/Dropbox/DAW/DIW/Actividades/A2.7/basico.css",
 		"/E/xampp/htdocs/LaRed/resources/css/calendario.css",
-		"/E/xampp/htdocs/LaRed/view/forbiden.php",
 		"/E/xampp/htdocs/LaRed/resources/js/calendario.js",
 		"/E/xampp/htdocs/LaRed/resources/css/pruebas.css",
 		"/G/Series/How I met your mother Season 9 FINAL/How.I.Met.Your.Mother.S09E18.720p.HDTV.x264-REMARKABLE.srt",
@@ -649,7 +645,6 @@
 		"/E/xampp/htdocs/LaRed/model/comentario.php",
 		"/E/xampp/htdocs/LaRed/model/upload.php",
 		"/E/xampp/htdocs/pomplo/subir.php",
-		"/E/xampp/htdocs/LaRed/model/accessDB.php",
 		"/E/xampp/htdocs/pomplo/imagen.php",
 		"/E/xampp/htdocs/pomplo/conexion.php",
 		"/E/xampp/htdocs/pomplo/index.php",
@@ -716,10 +711,7 @@
 		"/C/xampp/htdocs/LaRed/view/signin.php",
 		"/C/xampp/htdocs/LaRed - copia/controller/controladorUsuarios.php",
 		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/presionTeclas.html",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/tipoEvento.html",
-		"/C/xampp/htdocs/Unidad5/cesta_compra/productos.php",
-		"/C/xampp/htdocs/LaRed/model/accessDB.php",
-		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/eventoRaton.html"
+		"/C/Users/usuario/Dropbox/DAW/DWEC/Unidad 7 - Eventos/Ejercicios/tipoEvento.html"
 	],
 	"find":
 	{
@@ -737,6 +729,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lared",
 			"article",
 			"derecha",
 			"insertar",
@@ -799,81 +792,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "view/forbiden.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 426,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								294,
-								202
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

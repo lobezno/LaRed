@@ -6,32 +6,20 @@ class ControladorPosts{
 
 
 	function enviar(){
-
-		$hoy = date("Y-m-d");
-		//$imagen_temporal  = $_FILES['imagen']; 
-		//var_dump($imagen_temporal);
-
-/*
-		//este es el archivo temporal
-        $imagen_temporal  = $_FILES['imagen']['tmp_name'];  
-        //este es el tipo de archivo
-        $tipo = $_FILES['imagen']['type'];
-        //leer el archivo temporal en binario
-        $fp     = fopen($imagen_temporal, 'r+b');
-        $data = fread($fp, filesize($imagen_temporal));
-        
-        fclose($fp);
-        //escapar los caracteres
-        $data = mysql_escape_string($data);
-
-		$datos = array("user" => $_POST['user'], "post" => $_POST['post'], "fecha" => $hoy, "pic" => $data);
-		/*
-		$resultado = Post::insertarPost($datos);
-		if ($resultado) {
-			header("Location: ../view/index.php");
+		if (isset($_POST['post'])) {
+			$hoy = date("Y-m-d");
+			$datos = array("user" => $_POST['user'], "post" => $_POST['post'], "fecha" => $hoy);
+			$resultado = Post::insertarPost($datos);
+			if ($resultado) {
+				print("Post Insertado :)");
+				header("Location: ../view/index.php");
+			}else{
+				print("Error insertando el post.");
+			}
 		}else{
-			print("Error insertando el post.");
-		}*/
+			print("Tienes que escribir algo!!");
+		}
+
 	}
 
 	function misPosts($id){
@@ -50,8 +38,8 @@ class ControladorPosts{
 
 
 		if (self::yaGusta($idpost,$idusuario)) {
-			print("Un solo me gusta por persona! No seas avaricioso.:)");
-			header("Refresh: 1; url='../view/index.php'");
+			print("Un solo like por usuario. No seas avaricioso ;)");
+			header("Location: ../view/index.php");
 		}else{
 			$resultado = Post::like($idpost,$idusuario);
 			if ($resultado) {

@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../resources/css/estructura.css">
 </head>
 <body>
-	<section>
+	<section id="forbiden">
 		<?php 
 			include_once("../controller/controlErrores.php");
 			print($mensaje);

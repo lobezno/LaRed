@@ -11,17 +11,34 @@ function creaObjetoAjax () {
 
 function devuelveBusqueda() {
     if (objetoAjax.readyState==4 && objetoAjax.status==200) {
-        var respuesta = objetoAjax.responseText;
+        var foo = JSON.parse(objetoAjax.responseText);
         var dataList = document.getElementById('buscaUsuarios');
-        var nodo = document.createElement('option');
-        nodo.setAttribute('value',respuesta);
-        dataList.appendChild(nodo);
-        	console.log('debug|respuesta del ajax de devuelveBusqueda: ' + respuesta);
+        if (foo.length > 0) {
+            for (var i = 0; i < foo.length; i++) {
+                var nodo = document.createElement('option');
+                
+                nodo.setAttribute('value',foo[i]['usuario']);
+                dataList.appendChild(nodo);
+            };    
+        }else{
+            var nodo = document.createElement('option');
+                nodo.setAttribute('value','No hay usuarios con ese nombre :(');
+                dataList.appendChild(nodo);
+        }
+        
+        
+        	
         }
     }
 
+
+    function visitarUsuario(user){
+
+        //window.location = user.value+".php";
+    }
+
 var buscar = function(){
-    
+    document.getElementById('buscaUsuarios').innerHTML = "";
     datosPost="texto="+entrada.value;
     //Objeto XMLHttpRequest creado por la función.
     objetoAjax=creaObjetoAjax();

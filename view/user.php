@@ -32,14 +32,14 @@
 	
 	
 
-		<section>
+		<section id="user">
 			
 			<?php 
 		print("<a href='../controller/controladorUsuarios.php?action=add&parama=" . $_SESSION['idusuario'] ."&paramb=" . $info['idusuario'] . "'>Añadir a mis amigos</a>") 
 		?>
-			<h1>USER  <?php echo $info['usuario']; ?> </h1>
-			<label for="nombre">Nombre: <span id='nombre'><?php echo $info['nombre']; ?></span></label>
-			<label for="email">Email: <span id='email'><?php echo $info['email']; ?></span></label>
+			<h3>USER  <?php echo $info['usuario']; ?> </h3>
+			<label for="nombre">Nombre: </label><span class='user_info'><?php echo $info['nombre']; ?></span>
+			<label for="email">Email: </label><span class='user_info'><?php echo $info['email']; ?></span>
 			<figure>
 				<img id='avatar' class='avatar' src='../view/imagen.php?id=<?php echo $info['idusuario']; ?>'/>
 			</figure>

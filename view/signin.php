@@ -7,10 +7,10 @@
 	<script type="text/javascript" src="../resources/js/validacion.js"></script>
 </head>
 <body>
-	<section>
+	<section id="signin">
 		<form action="../controller/controladorUsuarios.php?action=signin" method="post">
 			<label for="user">Usuario</label>
-			<input type="text" id="user" name="user" required/>
+			<input type="text" id="user" name="user" required autofocus/>
 			<label for="password" >Password</label>
 			<input type="password" id="pass" name="pass" required/>
 			<label for="passwordb" >Repite Password</label>

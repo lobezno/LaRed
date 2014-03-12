@@ -34,7 +34,7 @@ class ControladorUsuarios{
 	}
 
 	function atri($post){
-		print("<p>Por <img class='avatar_mini' src='../view/imagen.php?id=" . $post['idusuario'] ."'/><a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a> el " . $post['fecha'] . "</p>");
+		print("<p>Por <a href='../view/user.php?id=" . $post['idusuario'] ."'>" . $post['usuario'] . "</a> <img class='avatar_mini' src='../view/imagen.php?id=" . $post['idusuario'] ."'/> el " . $post['fecha'] . "</p>");
 	}
 
 	function esAmigo($id,$idamigo){
@@ -75,9 +75,11 @@ class ControladorUsuarios{
 		
 		$resultado = Usuario::searchUser($texto);
 		if (!$resultado) {
-			print("No hay usuarios con ese nombre :(");
+			$vuelta = array();
+			echo json_encode($vuelta);
 		}else{
-			print($resultado[0]['usuario']);
+			echo json_encode($resultado);
+			//return($resultado[0]['usuario']);
 		}
 	}
 }

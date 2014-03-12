@@ -1,42 +1,144 @@
 /*-- Media Queries --*/
 
-@media screen and (max-width: 650px) {
+/*-- Mediano --*/
+@media screen and (max-width: 800px) {
+	body{
+		border: solid yellow;
+	}
 
-#wrapper_total{
+	.panel_middle{
+		float: left;
+		width: 98%;
+		height: auto;
+	}
+
+	.panel_left{
+		float: right;
+		width: 45%;
+		height: 50%;
+	}
+
+	.panel_right{
+		
+		width: 45%;
+		height: 50%;
+		
+		overflow-y: scroll;
+
+	}
+
+	.wrapper_left{
+	
+	padding: 0;
+	margin: 0;
+	width: 50%;	
+	
+	}
+
+	.wrapper_right{
+	padding: 0;
+	margin: 0;
+	width: 50%;	
+	
+	}
+
+	.float_derecha{
+		width: 96%;
+		margin: 0;
+	}
+
+	.section_principal{
+		margin: 0;
+	}
 
 
-	border: 4px solid yellow;
 }
-}
 
-
+/*-- Pequeño --*/
 @media screen and (max-width: 480px) {
+	img{
+		display: none;
+	}
 	body{
 		font-size: 0.7em;
+		border: none;
+
 	}
 
 	#wrapper_total{
-		margin: 0;
-		width: 100%;
-		border: 4px solid blue;
+		margin: 0 auto;
+		width: 99%;
+		border: none;
+
 	}
 
 	section{
-		width: 100%;
+		width: 99%;
 		margin: 0;
 	}
 
 	.wrapper_right{
-		width: 100%;
+		width: 99%;
 		clear: both;
 		float: left;
 		margin: 0;
 	}
-	.wrapper_right{
-		width: 100%;
+	.wrapper_left{
+		width: 99%;
 		clear: both;
 		float: left;
 		margin: 0;
+	}
+	.float_derecha{
+		float: left;
+		height: 125px;
+	}
+	
+	#insertarPost,.panel_left,.panel_right{
+		display: none;
 	}
 
+	#insertarPost{
+		display: none;
+	}
+
+	.section_titulo{
+		text-align: center;
+	}
+
+	.section_principal{
+		height: 125px;
+		width: 99%;
+	}
+
+	.insertar_oculto{
+		width: 100%;
+		height: auto;
+		display: block;
+		overflow: hidden;
+		float: left;
+		
+	}
+
+	.amigos_oculto{
+		display: inline-block;
+		height: auto;
+		float: left;
+		width: 95%;
+	}
+
+	.amigos_oculto li{
+		display: inline-block;
+		margin: 0 5px;
+		height: auto;
+
+	}
+
+	.boton{
+		width: 35%;
+	}
+
+	.text_oculto{
+		width: 60%;
+	}
 }

@@ -12,12 +12,21 @@ function creaObjetoAjax () {
 function recogeDatos() {
     if (objetoAjax.readyState==4 && objetoAjax.status==200) {
         miTexto=objetoAjax.responseText;
-        	document.write(miTexto);
+        //alert(miTexto);
+        console.log("DEBUG: " + miTexto);
+
+            // if (!miTexto) {
+            //     alert("Solo un like por persona! No seas avaricioso ;)");
+            // }else{
+            //     console.log("dentro");
+           
+               document.write(miTexto);
+            // }
+        	
         }
     }
 
 function meGusta(idusuario,idpost) {
-    
     datosPost="id="+idpost+"&idusuario="+idusuario;
     //Objeto XMLHttpRequest creado por la función.
     objetoAjax=creaObjetoAjax();
