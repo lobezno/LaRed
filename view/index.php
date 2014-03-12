@@ -7,6 +7,7 @@
 	<title>LaRed - Index</title>
 	<!--css -->
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<link rel="stylesheet"  id="estilo" href="../resources/css/ocean.css">
 	<link rel="stylesheet" href="../resources/css/responsive.css">
 
 	<!--Js -->
@@ -14,6 +15,7 @@
 	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 	<script type="text/javascript" src="../resources/js/enviarAjax.js"></script>
 	<script type="text/javascript" src="../resources/js/meGusta.js"></script>
+	<script type="text/javascript" src="../resources/js/cambiaEstilo.js"></script>
 	<script type="text/javascript" src="../resources/js/buscador.js"></script>
 </head>
 <body>
@@ -27,9 +29,12 @@
 					//	Usuario Autentificado
 					?>
 		<div id="menu">
+		<button onclick="cambiaEstilo('../resources/css/ocean.css', 1);" class="ocean">Ocean</button>
+		<button onclick="cambiaEstilo('../resources/css/dark.css', 1);" class="dark">Dark</button>
+		<button onclick="cambiaEstilo('../resources/css/pasion.css', 1);" class="passion">Passion</button>
 			<nav>
 					<ul>
-							<li><a href='#'><?php echo $user; ?></a></li>
+							<li><?php echo $user; ?></li>
 							<li><a href='../view/profile.php'>Perfil</a></li>
 							<li><a href='../view/logout.php'>Logout</a></li>
 					</ul>
@@ -104,7 +109,7 @@
 							</header>
 							<div id="post_contenido">
 								<div class="post_imagen">
-									<figure><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $registro['idpost']; ?>" alt=""></figure>
+									<figure class="imagen_figure"><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $registro['idpost']; ?>" alt=""></figure>
 									<div class="post_number"><a href="#">#<?php echo $registro['idpost']; ?></a></div>
 								</div>
 								<div class="post_texto">
@@ -145,7 +150,7 @@
 							</header>
 							<div id="post_contenido">
 								<div class="post_imagen">
-									<figure><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $post['idpost']; ?>" alt=""></figure>
+									<figure class="imagen_figure"><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $post['idpost']; ?>" alt=""></figure>
 									<div class="post_number"><a href="#">#<?php echo $post['idpost']; ?></a></div>
 								</div>
 								<div class="post_texto">
@@ -192,7 +197,7 @@
 							</header>
 							<div id="post_contenido">
 								<div class="post_imagen">
-									<figure><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $post['idpost']; ?>" alt=""></figure>
+									<figure class="imagen_figure"><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $post['idpost']; ?>" alt=""></figure>
 									<div class="post_number"><a href="#">#<?php echo $post['idpost']; ?></a></div>
 								</div>
 								<div class="post_texto">
@@ -241,7 +246,7 @@
 							</header>
 							<div id="post_contenido">
 								<div class="post_imagen">
-									<figure><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $post['idpost']; ?>" alt=""></figure>
+									<figure class="imagen_figure"><img class="imagen_preview" src="../view/imagen.php?idpost=<?php echo $post['idpost']; ?>" alt=""></figure>
 									<div class="post_number"><a href="#">#<?php echo $post['idpost']; ?></a></div>
 								</div>
 								<div class="post_texto">
@@ -292,8 +297,9 @@
 					 ?>
 					</ul>
 				</section>
-	<footer>
-		Footer de LaRed
+	<footer class="footer_principal">
+		<span>LaRed - Proyecto de red social para DAW2014.</span>
+		<span>Ningun derecho reservado &copy;</span>
 	</footer>
 </body>
 </html>

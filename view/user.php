@@ -11,14 +11,15 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Usuario <?php echo $info['usuario']; ?> </title>
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<link rel="stylesheet"  id="estilo" href="../resources/css/ocean.css">
 
 </head>
 <body>
 	<div id="menu">
 			<nav>
 					<ul>
-							<li><a href="../view/index.php">Volver</a></li>
-							<li><a href='#'><?php echo $user; ?></a></li>
+							<li><?php echo $user; ?></li>
+							<li><a href="../view/index.php">Inicio</a></li>
 							<li><a href='../view/profile.php'>Perfil</a></li>
 							<li><a href='../view/logout.php'>Logout</a></li>
 					</ul>
@@ -73,5 +74,9 @@
 			</div>
 		</section>
 	</div>
+	<footer class="footer_principal">
+		<span>LaRed - Proyecto de red social para DAW2014.</span>
+		<span>Ningun derecho reservado &copy;</span>
+	</footer>
 </body>
 </html>

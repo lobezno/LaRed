@@ -10,6 +10,7 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Perfil - <?php echo $user; ?></title>
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<link rel="stylesheet"  id="estilo" href="../resources/css/ocean.css">
 	<link rel="stylesheet" href="../resources/css/calendario.css">
 	<script type="text/javascript" src="../resources/js/calendario.js"></script>
 </head>
@@ -17,9 +18,8 @@
 	<div id="menu">
 			<nav>
 					<ul>
-							<li><a href="../view/index.php">Volver</a></li>
-							<li><a href='#'><?php echo $user; ?></a></li>
-							<li><a href='../view/profile.php'>Perfil</a></li>
+							<li><?php echo $user; ?></li>
+							<li><a href="../view/index.php">Inicio</a></li>
 							<li><a href='../view/logout.php'>Logout</a></li>
 					</ul>
 			</nav>
@@ -101,5 +101,9 @@
 
 		
 	</div>
+	<footer class="footer_principal">
+		<span>LaRed - Proyecto de red social para DAW2014.</span>
+		<span>Ningun derecho reservado &copy;</span>
+	</footer>
 </body>
 </html>

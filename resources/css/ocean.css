@@ -1,0 +1,61 @@
+/*-- Tema Ocean--*/
+
+body{
+	background-image: url('../../resources/images/background_tile6.jpg');
+	color: #CEE8FF;
+}
+
+header#cabecera{
+	border: 3px solid #333399;
+}
+
+#menu,footer{
+	background-color: #333399;
+}
+
+#wrapper_total{
+	border: 3px solid #333399;
+	background-color: rgba(51,102,204,0.5);
+}
+
+h3{
+	color: #000059;
+}
+
+section{
+	border: 1px solid #333399;
+	background-color: #6699cc;
+	box-shadow: inset 0 0 1em #000033;
+
+}
+
+.boton{
+
+	color: #93CCFF;
+	background-color: #6666cc;
+	border: 2px solid black;
+	box-shadow: 1px 1px 10px #1B0035;
+}
+
+
+
+.post header{
+	border: 1px solid #333399;
+}
+
+
+article #post_contenido{
+	border: 1px solid #333399;
+}
+
+.imagen_preview{
+	border: inset #333399;
+}
+
+
+.boton_me_gusta{
+	color: #93CCFF;
+	background-color: #6666cc;
+	border: 2px dotted black;
+	box-shadow: 1px 1px 10px #1B0035;
+}

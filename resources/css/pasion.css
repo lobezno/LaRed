@@ -1,0 +1,63 @@
+/*-- Tema Dark--*/
+body{
+		color: #2f1f39;
+		background-image: url('../../resources/images/background_tile7.jpg');
+}
+
+header#cabecera{
+	border: 3px solid #591c3b;
+}
+
+#menu,footer{
+	background-color: #591c3b;
+}
+
+#wrapper_total{
+	border: 3px solid #591c3b;
+	background-color: rgba(239,173,159,0.5);
+}
+
+h3{
+	color: #000059;
+}
+
+section{
+	border: 1px solid #591c3b;
+	background-color: #efad9f;
+	box-shadow: inset 0 0 1em #000033;
+
+}
+
+.boton{
+
+	color: #efad9f;
+	background-color: #6e445c;
+	border: 2px solid black;
+	box-shadow: 1px 1px 10px #1B0035;
+}
+
+.post_footer{
+	color: #efad9f;
+}
+
+
+.post header{
+	border: 1px solid #591c3b;
+}
+
+
+article #post_contenido{
+	border: 1px solid #591c3b;
+}
+
+.imagen_preview{
+	border: inset #591c3b;
+}
+
+
+.boton_me_gusta{
+	color: #efad9f;
+	background-color: #6e445c;
+	border: 2px dotted black;
+	box-shadow: 1px 1px 10px #1B0035;
+}

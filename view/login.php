@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Login</title>
     <link rel="stylesheet" href="../resources/css/estructura.css">
+    <link rel="stylesheet"  id="estilo" href="../resources/css/ocean.css">
     <script type="text/javascript" src="../resources/js/validaLogin.js"></script>
 </head>
 <body>
@@ -36,16 +37,28 @@
             </article>
         </section>
     </noscript>
+    <body>
+    <div id="menu">
+            <nav>
+                    <ul>
+                            <li><a href='../view/signin.php'>Sign In</a></li>
+                    </ul>
+            </nav>
+        </div>
+    <header id="cabecera">
+    Header - La Red
+    </header>
+
+    <div id="wrapper_total">
     <section id="loginphp">
     	<form method="post" >
-    		<fieldset>
-    			<label>Usuario</label>
-    			<input type="text" name="user" id="user" placeholder='Usuario' autocomplete="off" required>
-    			<label>Password</label>
-    			<input type="password" name="pass" id="pass" placeholder='Contraseña' required>
+    			<label class="etiqueta_signin">Usuario</label>
+    			<input type="text" name="user" id="user" placeholder='Usuario' autocomplete="off"  class="texto_signin"  autofocus required>
+    			<label class="etiqueta_signin">Password</label>
+    			<input type="password" name="pass" id="pass" placeholder='Contraseña' class="texto_signin" required><br />
     			<input type="button" value="Log in" name="enviar" id="enviar" onclick="validarLogin()" class="boton">
-    		</fieldset>
     	</form>
     </section>
+    </div>
 </body>
 </html>

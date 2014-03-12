@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>LaRed - Acceso Denegado</title>
 	<link rel="stylesheet" href="../resources/css/estructura.css">
+	<link rel="stylesheet"  id="estilo" href="../resources/css/ocean.css">
 </head>
 <body>
 	<section id="forbiden">

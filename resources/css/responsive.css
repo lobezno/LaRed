@@ -2,9 +2,6 @@
 
 /*-- Mediano --*/
 @media screen and (max-width: 800px) {
-	body{
-		border: solid yellow;
-	}
 
 	.panel_middle{
 		float: left;
@@ -26,6 +23,32 @@
 		overflow-y: scroll;
 
 	}
+
+	.imagen_figure{
+	display: block;
+	margin: 0;
+	padding: 0;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+	-webkit-margin-start: 0;
+	-webkit-margin-end: 0;
+	text-align: center;
+	}
+
+	article .post_imagen{
+	clear: both;
+	float: left;
+	margin: 0;
+	width: 100%;
+	overflow: hidden;
+
+	}
+
+	#post_contenido > div.post_texto{
+		float: right;
+		clear: both;
+	}
+
 
 	.wrapper_left{
 	
