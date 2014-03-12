@@ -43,11 +43,14 @@ section{
 
 .post header{
 	border: 1px solid #393e44;
+	border-top: none;
+	border-bottom: none;
 }
 
 
 article #post_contenido{
 	border: 1px solid #393e44;
+		border-top: none;
 }
 
 .imagen_preview{

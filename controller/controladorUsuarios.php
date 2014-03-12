@@ -10,6 +10,8 @@ class ControladorUsuarios{
 		$resultado = Usuario::check($user,$pass);
 		if (!$resultado) {
 			header("Location: ../view/forbiden.php?error=fail");
+		}else{
+			header("Location: ../view/index.php");
 		}
 	}
 

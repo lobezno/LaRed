@@ -40,7 +40,7 @@ function login(){
 	
 	datosPost="user="+user+"&pass="+pass;
 	objetoAjax=creaObjetoAjax();
-	objetoAjax.open("POST","../controller/controladorUsuarios.php?action=login",true);
+	objetoAjax.open("POST","../controller/controladorUsuarios.php?action=login",false);
 	objetoAjax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	objetoAjax.onreadystatechange=retorno;
 	objetoAjax.send(datosPost); 
